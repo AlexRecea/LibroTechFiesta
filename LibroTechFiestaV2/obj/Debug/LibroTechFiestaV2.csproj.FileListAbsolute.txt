@@ -1,5 +1,4 @@
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.csproj.AssemblyReference.cache
-E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.Form1.resources
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.Properties.Resources.resources
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.csproj.GenerateResource.cache
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.csproj.CoreCompileInputs.cache
@@ -10,3 +9,4 @@ E:\Project_II\LibroTechFiestaV2\bin\Debug\LibroTechFiestaV2.exe
 E:\Project_II\LibroTechFiestaV2\bin\Debug\LibroTechFiestaV2.pdb
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.exe
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.pdb
+E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.MainPage.resources
