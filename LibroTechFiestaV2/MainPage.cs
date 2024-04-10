@@ -17,14 +17,10 @@ namespace LibroTechFiestaV2
     {
         private void MainPage_Load(object sender, EventArgs e)
         {
-            int xPosition = (Screen.PrimaryScreen.Bounds.Width - textBox1.Width) / 2;
-            textBox1.Location = new System.Drawing.Point(xPosition, 200);
-            int xPosition2 = (Screen.PrimaryScreen.Bounds.Width - textBox2.Width) / 2;
-            textBox2.Location = new System.Drawing.Point(xPosition2, 250);
-            int xPosition3 = xPosition - label1.Width - label1.Width / 2;
-            label1.Location = new System.Drawing.Point(xPosition3, 200);
-            int xPosition4 = xPosition2 - label2.Width - label2.Width / 2;
-            label2.Location = new System.Drawing.Point(xPosition3, 250);
+            int xPosition = (Screen.PrimaryScreen.Bounds.Width - usernameText.Width) / 2;
+            usernameText.Location = new System.Drawing.Point(xPosition, 200);
+            int xPosition2 = (Screen.PrimaryScreen.Bounds.Width - passwordText.Width) / 2;
+            passwordText.Location = new System.Drawing.Point(xPosition2, 250);
             int xPosition5 = (Screen.PrimaryScreen.Bounds.Width -loginButton.Width) / 2;
             loginButton.Location = new System.Drawing.Point(xPosition5, 300);
         }
@@ -45,8 +41,8 @@ namespace LibroTechFiestaV2
             {
                 SqlConnection connection= new SqlConnection(conn);
                 SqlCommand cmd = new SqlCommand(" select * from Librarians where username=@name and password=@pass", connection);
-                cmd.Parameters.AddWithValue("@name", textBox1.Text);
-                cmd.Parameters.AddWithValue("@pass", textBox2.Text);
+                cmd.Parameters.AddWithValue("@name", usernameText.Text);
+                cmd.Parameters.AddWithValue("@pass", passwordText.Text);
 
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -75,6 +71,44 @@ namespace LibroTechFiestaV2
             
         }
 
-     
+        private void UsernameText_Enter(object sender, EventArgs e)
+        {
+            if (usernameText.Text == "username")
+            {
+                usernameText.Text = "";
+
+                usernameText.ForeColor = Color.Black;
+            }
+        }
+
+        private void UsernameText_Leave(object sender, EventArgs e)
+        {
+            if (usernameText.Text == "")
+            {
+                usernameText.Text = "username";
+
+                usernameText.ForeColor = Color.Silver;
+            }
+        }
+
+        private void PasswordText_Enter(object sender, EventArgs e)
+        {
+            if (passwordText.Text == "password")
+            {
+                passwordText.Text = ""; 
+
+                passwordText.ForeColor = Color.Black;
+            }
+        }
+
+        private void PasswordText_Leave(object sender, EventArgs e)
+        {
+            if (passwordText.Text == "")
+            {
+                passwordText.Text = "password";
+
+                passwordText.ForeColor = Color.Silver;
+            }
+        }
     }
 }
