@@ -13,6 +13,7 @@ namespace LibroTechFiestaV2
 {
     public partial class LibrariansPage : Form
     {
+        
         public LibrariansPage()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace LibroTechFiestaV2
         {
             foreach (Book book in books)
             {
-                listBox1.Items.Add(book.id + "  " + book.title + "           " + book.authorName + "       " + book.quantity);
+                booksList.Items.Add(book.id + "  " + book.title + "           " + book.authorName + "       " + book.quantity);
             }
         }
         private List<Book> getBooks()
@@ -47,6 +48,40 @@ namespace LibroTechFiestaV2
 
             }
             return books;
+        }
+
+        private void SearchBoxText_Enter(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "Search")
+            {
+                searchBox.Text = "";
+
+                searchBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void SearchBoxText_Leave(object sender, EventArgs e)
+        {
+            if (searchBox.Text == "")
+            {
+                searchBox.Text = "Search";
+
+                searchBox.ForeColor= Color.Silver;
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       private void backToMainPageButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+            MainPage mainPage = new MainPage();
+            mainPage.Show();
+            
         }
     }
 }

@@ -47,7 +47,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(790, 449);
+            this.loginButton.Location = new System.Drawing.Point(480, 249);
             this.loginButton.Margin = new System.Windows.Forms.Padding(4);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(100, 30);
@@ -60,7 +60,7 @@
             // 
             this.usernameText.BackColor = System.Drawing.SystemColors.Window;
             this.usernameText.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.usernameText.Location = new System.Drawing.Point(790, 317);
+            this.usernameText.Location = new System.Drawing.Point(435, 88);
             this.usernameText.Margin = new System.Windows.Forms.Padding(4);
             this.usernameText.MaxLength = 40;
             this.usernameText.Multiline = true;
@@ -75,7 +75,7 @@
             // passwordText
             // 
             this.passwordText.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.passwordText.Location = new System.Drawing.Point(790, 375);
+            this.passwordText.Location = new System.Drawing.Point(435, 171);
             this.passwordText.Margin = new System.Windows.Forms.Padding(4);
             this.passwordText.MaxLength = 40;
             this.passwordText.Name = "passwordText";
@@ -100,7 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgourndLibrary;
-            this.ClientSize = new System.Drawing.Size(1559, 815);
+            this.ClientSize = new System.Drawing.Size(1087, 504);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.passwordText);
             this.Controls.Add(this.usernameText);

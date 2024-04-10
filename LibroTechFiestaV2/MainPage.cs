@@ -28,7 +28,7 @@ namespace LibroTechFiestaV2
         DataSet dsClients;
         DataSet dsBooks;
         string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
-        LibrariansPage librariansPage = new LibrariansPage();
+        
         public MainPage()
         {
             InitializeComponent();
@@ -54,9 +54,12 @@ namespace LibroTechFiestaV2
 
                 if (count == 1)
                 {
+                    LibrariansPage librariansPage = new LibrariansPage();
                     //MessageBox.Show("Succesfully Login!");
                     this.Hide();
+                    //this.Close();
                     librariansPage.Show();
+                    
                 }
                 else
                 {
