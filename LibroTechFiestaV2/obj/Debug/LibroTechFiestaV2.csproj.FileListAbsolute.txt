@@ -10,3 +10,16 @@ E:\Project_II\LibroTechFiestaV2\bin\Debug\LibroTechFiestaV2.pdb
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.exe
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.pdb
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.MainPage.resources
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\bin\Debug\Database1.mdf
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\bin\Debug\Database1_log.ldf
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\bin\Debug\LibroTechFiestaV2.exe.config
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\bin\Debug\LibroTechFiestaV2.exe
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\bin\Debug\LibroTechFiestaV2.pdb
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.csproj.AssemblyReference.cache
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.MainPage.resources
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.Properties.Resources.resources
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.csproj.GenerateResource.cache
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.csproj.CoreCompileInputs.cache
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.exe
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.pdb
+C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.LibrariansPage.resources

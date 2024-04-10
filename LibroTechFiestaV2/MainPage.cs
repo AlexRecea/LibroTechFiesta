@@ -19,6 +19,14 @@ namespace LibroTechFiestaV2
         {
             int xPosition = (Screen.PrimaryScreen.Bounds.Width - textBox1.Width) / 2;
             textBox1.Location = new System.Drawing.Point(xPosition, 200);
+            int xPosition2 = (Screen.PrimaryScreen.Bounds.Width - textBox2.Width) / 2;
+            textBox2.Location = new System.Drawing.Point(xPosition2, 250);
+            int xPosition3 = xPosition - label1.Width - label1.Width / 2;
+            label1.Location = new System.Drawing.Point(xPosition3, 200);
+            int xPosition4 = xPosition2 - label2.Width - label2.Width / 2;
+            label2.Location = new System.Drawing.Point(xPosition3, 250);
+            int xPosition5 = (Screen.PrimaryScreen.Bounds.Width -loginButton.Width) / 2;
+            loginButton.Location = new System.Drawing.Point(xPosition5, 300);
         }
         SqlConnection myCon = new SqlConnection();
         DataSet dsClients;
@@ -67,6 +75,6 @@ namespace LibroTechFiestaV2
             
         }
 
-        
+     
     }
 }
