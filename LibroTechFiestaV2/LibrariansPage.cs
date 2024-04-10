@@ -13,11 +13,29 @@ namespace LibroTechFiestaV2
 {
     public partial class LibrariansPage : Form
     {
-        
+        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        DataSet dsClients;
+        DataSet dsBooks;
         public LibrariansPage()
         {
             InitializeComponent();
+
+            SqlConnection connection = new SqlConnection(conn);
+            dsBooks = new DataSet();
+            SqlDataAdapter daBooks = new SqlDataAdapter("SELECT * FROM Books", connection);
+            daBooks.Fill(dsBooks, "Books");
+
+            foreach (DataRow dr in dsBooks.Tables["Books"].Rows)
+            {
+                String name = dr.ItemArray.GetValue(1).ToString();
+                booksList.Items.Add(name);
+            }
+            connection.Close();
+
         }
+
+        
+
         private void showBooks(List<Book> books)
         {
             foreach (Book book in books)
@@ -66,7 +84,7 @@ namespace LibroTechFiestaV2
             {
                 searchBox.Text = "Search";
 
-                searchBox.ForeColor= Color.Silver;
+                searchBox.ForeColor = Color.Silver;
             }
         }
 

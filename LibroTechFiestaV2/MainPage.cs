@@ -24,9 +24,8 @@ namespace LibroTechFiestaV2
             int xPosition5 = (Screen.PrimaryScreen.Bounds.Width -loginButton.Width) / 2;
             loginButton.Location = new System.Drawing.Point(xPosition5, 300);
         }
-        SqlConnection myCon = new SqlConnection();
-        DataSet dsClients;
-        DataSet dsBooks;
+
+        
         string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
         
         public MainPage()
@@ -35,7 +34,7 @@ namespace LibroTechFiestaV2
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginButton_Click(object sender, EventArgs e)
         {
             try
             {
