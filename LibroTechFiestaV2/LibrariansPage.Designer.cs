@@ -29,22 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibrariansPage));
-            this.booksList = new System.Windows.Forms.ListBox();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
-            this.label1 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.backToMainPageButton = new System.Windows.Forms.Button();
+            this.booksView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // booksList
-            // 
-            this.booksList.FormattingEnabled = true;
-            this.booksList.ItemHeight = 17;
-            this.booksList.Location = new System.Drawing.Point(12, 59);
-            this.booksList.Name = "booksList";
-            this.booksList.Size = new System.Drawing.Size(687, 378);
-            this.booksList.TabIndex = 0;
             // 
             // directorySearcher1
             // 
@@ -52,19 +42,10 @@
             this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
             this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Available books";
-            // 
             // searchBox
             // 
             this.searchBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.searchBox.Location = new System.Drawing.Point(819, 76);
+            this.searchBox.Location = new System.Drawing.Point(1235, 41);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(100, 25);
             this.searchBox.TabIndex = 2;
@@ -75,7 +56,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(998, 76);
+            this.searchButton.Location = new System.Drawing.Point(1241, 88);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(94, 60);
             this.searchButton.TabIndex = 3;
@@ -86,13 +67,22 @@
             // backToMainPageButton
             // 
             this.backToMainPageButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.backToMainPageButton.Location = new System.Drawing.Point(941, 410);
+            this.backToMainPageButton.Location = new System.Drawing.Point(1217, 461);
             this.backToMainPageButton.Name = "backToMainPageButton";
             this.backToMainPageButton.Size = new System.Drawing.Size(151, 77);
             this.backToMainPageButton.TabIndex = 4;
             this.backToMainPageButton.Text = "Back to Main Page";
             this.backToMainPageButton.UseVisualStyleBackColor = true;
             this.backToMainPageButton.Click += new System.EventHandler(this.backToMainPageButton_Click);
+            // 
+            // booksView
+            // 
+            this.booksView.HideSelection = false;
+            this.booksView.Location = new System.Drawing.Point(22, 22);
+            this.booksView.Name = "booksView";
+            this.booksView.Size = new System.Drawing.Size(905, 400);
+            this.booksView.TabIndex = 5;
+            this.booksView.UseCompatibleStateImageBehavior = false;
             // 
             // LibrariansPage
             // 
@@ -101,11 +91,10 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.background2;
             this.ClientSize = new System.Drawing.Size(1461, 697);
+            this.Controls.Add(this.booksView);
             this.Controls.Add(this.backToMainPageButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.booksList);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -119,12 +108,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox booksList;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button backToMainPageButton;
+        private System.Windows.Forms.ListView booksView;
     }
 }

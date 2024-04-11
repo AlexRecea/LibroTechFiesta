@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LibroTechFiestaV2
 {
@@ -20,6 +21,16 @@ namespace LibroTechFiestaV2
         {
             InitializeComponent();
 
+            booksView.View = View.Details;
+            booksView.Columns.Add("Titlul", 300);
+            booksView.Columns.Add("Autorul", 300);
+            booksView.Columns.Add("Stoc", 300);
+            // Ajustarea coloanelor pentru a se potrivi conținutului
+            //foreach (ColumnHeader column in booksView.Columns)
+            //{
+            //    column.Width = -2;
+            //}
+
             SqlConnection connection = new SqlConnection(conn);
             dsBooks = new DataSet();
             SqlDataAdapter daBooks = new SqlDataAdapter("SELECT * FROM Books", connection);
@@ -28,44 +39,18 @@ namespace LibroTechFiestaV2
             foreach (DataRow dr in dsBooks.Tables["Books"].Rows)
             {
                 String name = dr.ItemArray.GetValue(1).ToString();
-                booksList.Items.Add(name);
+                String author = dr.ItemArray.GetValue(2).ToString();
+                String quantity = dr.ItemArray.GetValue(3).ToString();
+                //booksList.Items.Add(name);
+                //Un item este o linie si SubItem e o coloana de pe linie
+                //Daca pui multe items se face automat viewBox-ul cu scroll
+                ListViewItem listViewItem = new ListViewItem(name);
+                listViewItem.SubItems.Add(author);
+                listViewItem.SubItems.Add(quantity);
+                booksView.Items.Add (listViewItem);
             }
             connection.Close();
 
-        }
-
-        
-
-        private void showBooks(List<Book> books)
-        {
-            foreach (Book book in books)
-            {
-                booksList.Items.Add(book.id + "  " + book.title + "           " + book.authorName + "       " + book.quantity);
-            }
-        }
-        private List<Book> getBooks()
-        {
-            List<Book> books = new List<Book>();
-            DataSet dataSetBooks;
-            string Connection = @"Data Source = (LocalDB)\MSSQLLocalDB;
-                                        AttachDbFilename=|DataDirectory|Database1.mdf;
-                                        Integrated Security = True";
-            SqlConnection DataConnection = new SqlConnection(Connection);
-            DataConnection.Open();
-            dataSetBooks = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Books", DataConnection);
-            adapter.Fill(dataSetBooks, "Books");
-            foreach (DataRow dataRow in dataSetBooks.Tables["Books"].Rows)
-            {
-                int id = Convert.ToInt32(dataRow.ItemArray.GetValue(0));
-                String title = dataRow.ItemArray.GetValue(1).ToString().Trim();
-                String author = dataRow.ItemArray.GetValue(2).ToString().Trim();
-                int quantity = Convert.ToInt32(dataRow.ItemArray.GetValue(3));
-                Book book = new Book(id, title, author, quantity);
-                books.Add(book);
-
-            }
-            return books;
         }
 
         private void SearchBoxText_Enter(object sender, EventArgs e)
@@ -73,7 +58,6 @@ namespace LibroTechFiestaV2
             if (searchBox.Text == "Search")
             {
                 searchBox.Text = "";
-
                 searchBox.ForeColor = Color.Black;
             }
         }
@@ -83,7 +67,6 @@ namespace LibroTechFiestaV2
             if (searchBox.Text == "")
             {
                 searchBox.Text = "Search";
-
                 searchBox.ForeColor = Color.Silver;
             }
         }
