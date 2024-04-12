@@ -20,36 +20,11 @@ namespace LibroTechFiestaV2
         public LibrariansPage()
         {
             InitializeComponent();
-
             booksView.View = View.Details;
             booksView.Columns.Add("Titlul", 300);
             booksView.Columns.Add("Autorul", 300);
             booksView.Columns.Add("Stoc", 300);
-            // Ajustarea coloanelor pentru a se potrivi conținutului
-            //foreach (ColumnHeader column in booksView.Columns)
-            //{
-            //    column.Width = -2;
-            //}
-
-            SqlConnection connection = new SqlConnection(conn);
-            dsBooks = new DataSet();
-            SqlDataAdapter daBooks = new SqlDataAdapter("SELECT * FROM Books", connection);
-            daBooks.Fill(dsBooks, "Books");
-
-            foreach (DataRow dr in dsBooks.Tables["Books"].Rows)
-            {
-                String name = dr.ItemArray.GetValue(1).ToString();
-                String author = dr.ItemArray.GetValue(2).ToString();
-                String quantity = dr.ItemArray.GetValue(3).ToString();
-                //booksList.Items.Add(name);
-                //Un item este o linie si SubItem e o coloana de pe linie
-                //Daca pui multe items se face automat viewBox-ul cu scroll
-                ListViewItem listViewItem = new ListViewItem(name);
-                listViewItem.SubItems.Add(author);
-                listViewItem.SubItems.Add(quantity);
-                booksView.Items.Add (listViewItem);
-            }
-            connection.Close();
+            showAllBooks();
 
         }
 
@@ -73,9 +48,67 @@ namespace LibroTechFiestaV2
 
         private void searchButton_Click(object sender, EventArgs e)
         {
+            string searchTerm = searchBox.Text.Trim().ToLower();
+            if (searchTerm == "" || searchTerm == "Search")
+            {
+                showAllBooks();
+            }
 
+            else
+            {
+
+                foreach (ListViewItem item in booksView.Items)
+                {
+                    bool match = false;
+                    foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
+                    {
+                        if (subItem.Text.Trim().ToLower().Contains(searchTerm))
+                        {
+                            match = true;
+                            break;
+                        }
+                    }
+                   
+                   if (match == false)
+                    {
+                        item.SubItems.Clear();
+                    }
+
+
+                }
+            }
         }
 
+        private void showAllBooks ()
+        {
+            booksView.Items.Clear();
+            
+            // Ajustarea coloanelor pentru a se potrivi conținutului
+            //foreach (ColumnHeader column in booksView.Columns)
+            //{
+            //    column.Width = -2;
+            //}
+
+            SqlConnection connection = new SqlConnection(conn);
+            dsBooks = new DataSet();
+            SqlDataAdapter daBooks = new SqlDataAdapter("SELECT * FROM Books", connection);
+            daBooks.Fill(dsBooks, "Books");
+
+            foreach (DataRow dr in dsBooks.Tables["Books"].Rows)
+            {
+                String name = dr.ItemArray.GetValue(1).ToString();
+                String author = dr.ItemArray.GetValue(2).ToString();
+                String quantity = dr.ItemArray.GetValue(3).ToString();
+                //booksList.Items.Add(name);
+                //Un item este o linie si SubItem e o coloana de pe linie
+                //Daca pui multe items se face automat viewBox-ul cu scroll
+                ListViewItem listViewItem = new ListViewItem(name);
+                listViewItem.SubItems.Add(author);
+                listViewItem.SubItems.Add(quantity);
+                booksView.Items.Add(listViewItem);
+            }
+            connection.Close();
+        }
        private void backToMainPageButton_Click(object sender, EventArgs e)
         {
             this.Hide();

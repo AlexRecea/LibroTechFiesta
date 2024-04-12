@@ -39,7 +39,7 @@ namespace LibroTechFiestaV2
             try
             {
                 SqlConnection connection= new SqlConnection(conn);
-                SqlCommand cmd = new SqlCommand(" select * from Librarians where username=@name and password=@pass", connection);
+                SqlCommand cmd = new SqlCommand(" select * from Librarians where username=@name COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
                 cmd.Parameters.AddWithValue("@name", usernameText.Text);
                 cmd.Parameters.AddWithValue("@pass", passwordText.Text);
 
