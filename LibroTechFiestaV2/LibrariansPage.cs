@@ -49,13 +49,12 @@ namespace LibroTechFiestaV2
         private void searchButton_Click(object sender, EventArgs e)
         {
             string searchTerm = searchBox.Text.Trim().ToLower();
-            if (searchTerm == "" || searchTerm == "Search")
-            {
+            
                 showAllBooks();
-            }
 
-            else
+            if (searchTerm != "search")
             {
+
 
                 foreach (ListViewItem item in booksView.Items)
                 {
@@ -67,11 +66,12 @@ namespace LibroTechFiestaV2
                             match = true;
                             break;
                         }
+
                     }
-                   
-                   if (match == false)
+
+                    if (match == false)
                     {
-                        item.SubItems.Clear();
+                        item.Remove();
                     }
 
 
