@@ -34,6 +34,7 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.backToMainPageButton = new System.Windows.Forms.Button();
             this.booksView = new System.Windows.Forms.ListView();
+            this.addNewBook = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -84,6 +85,16 @@
             this.booksView.TabIndex = 5;
             this.booksView.UseCompatibleStateImageBehavior = false;
             // 
+            // addNewBook
+            // 
+            this.addNewBook.Location = new System.Drawing.Point(851, 532);
+            this.addNewBook.Name = "addNewBook";
+            this.addNewBook.Size = new System.Drawing.Size(173, 81);
+            this.addNewBook.TabIndex = 6;
+            this.addNewBook.Text = "Add New Book";
+            this.addNewBook.UseVisualStyleBackColor = true;
+            this.addNewBook.Click += new System.EventHandler(this.addNewBook_Click);
+            // 
             // LibrariansPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -91,6 +102,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.background2;
             this.ClientSize = new System.Drawing.Size(1461, 697);
+            this.Controls.Add(this.addNewBook);
             this.Controls.Add(this.booksView);
             this.Controls.Add(this.backToMainPageButton);
             this.Controls.Add(this.searchButton);
@@ -113,5 +125,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button backToMainPageButton;
         private System.Windows.Forms.ListView booksView;
+        private System.Windows.Forms.Button addNewBook;
     }
 }
