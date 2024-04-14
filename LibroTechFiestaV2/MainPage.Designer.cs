@@ -34,6 +34,10 @@
             this.usernameText = new System.Windows.Forms.TextBox();
             this.passwordText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.registerButton = new System.Windows.Forms.Button();
+            this.loginLibrariansButton = new System.Windows.Forms.Button();
+            this.usernameClientText = new System.Windows.Forms.TextBox();
+            this.passwordClientText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -94,6 +98,40 @@
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 5;
             // 
+            // registerButton
+            // 
+            this.registerButton.Location = new System.Drawing.Point(343, 255);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(92, 38);
+            this.registerButton.TabIndex = 6;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            // 
+            // loginLibrariansButton
+            // 
+            this.loginLibrariansButton.Location = new System.Drawing.Point(894, 400);
+            this.loginLibrariansButton.Name = "loginLibrariansButton";
+            this.loginLibrariansButton.Size = new System.Drawing.Size(97, 47);
+            this.loginLibrariansButton.TabIndex = 7;
+            this.loginLibrariansButton.Text = "Login Librarians";
+            this.loginLibrariansButton.UseVisualStyleBackColor = true;
+            this.loginLibrariansButton.Click += new System.EventHandler(this.loginLibrariansButton_Click);
+            // 
+            // usernameClientText
+            // 
+            this.usernameClientText.Location = new System.Drawing.Point(130, 112);
+            this.usernameClientText.Name = "usernameClientText";
+            this.usernameClientText.Size = new System.Drawing.Size(100, 25);
+            this.usernameClientText.TabIndex = 8;
+            // 
+            // passwordClientText
+            // 
+            this.passwordClientText.Location = new System.Drawing.Point(163, 198);
+            this.passwordClientText.Name = "passwordClientText";
+            this.passwordClientText.Size = new System.Drawing.Size(100, 25);
+            this.passwordClientText.TabIndex = 9;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -101,6 +139,10 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgourndLibrary;
             this.ClientSize = new System.Drawing.Size(1087, 504);
+            this.Controls.Add(this.passwordClientText);
+            this.Controls.Add(this.usernameClientText);
+            this.Controls.Add(this.loginLibrariansButton);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.passwordText);
             this.Controls.Add(this.usernameText);
@@ -127,6 +169,10 @@
         private System.Windows.Forms.TextBox usernameText;
         private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Button loginLibrariansButton;
+        private System.Windows.Forms.TextBox usernameClientText;
+        private System.Windows.Forms.TextBox passwordClientText;
     }
 }
 

@@ -33,7 +33,11 @@ namespace LibroTechFiestaV2
 
         public void InsertOrUpdateBook(string title, string author, int quantity)
         {
+            //Recea
             string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+
+            //Elena
+            //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
 
             // Check if the book already exists in the database
             string selectQuery = "SELECT COUNT(*) FROM Books WHERE Title = @Title";

@@ -14,7 +14,11 @@ namespace LibroTechFiestaV2
 {
     public partial class LibrariansPage : Form
     {
+        //Recea
         string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+
+        //Elena
+        // string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         DataSet dsClients;
         DataSet dsBooks;
         public LibrariansPage()
