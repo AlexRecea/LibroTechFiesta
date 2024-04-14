@@ -21,7 +21,7 @@ namespace LibroTechFiestaV2
         {
             InitializeComponent();
             booksView.View = View.Details;
-            booksView.Columns.Add("Titlul", 300);
+            booksView.Columns.Add("Titlul", 300); //300 e latimea fiecarei coloane in pixeli (latimea totala a viewBox e 905, nu fix 900)
             booksView.Columns.Add("Autorul", 300);
             booksView.Columns.Add("Stoc", 300);
             showAllBooks();

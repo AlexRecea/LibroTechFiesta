@@ -20,31 +20,74 @@ namespace LibroTechFiestaV2
 
         private void addNewBookButton_Click(object sender, EventArgs e)
         {
-            string titlu = newBookTitle.Text.Trim();
-            string autor = newBookAuthor.Text.Trim();
-            int cantitate = int.Parse(newBookQuantity.Text.Trim());
+            string title = newBookTitle.Text.Trim();
+            string author = newBookAuthor.Text.Trim();
+            int quantity = int.Parse(newBookQuantity.Text.Trim());
+            MainPage mainPage = new MainPage();
+            int nrOfRows = mainPage.GetRowCount();
+            int id = nrOfRows + 1;
 
-            string query = "INSERT INTO Books (Title, Author, Quantity) VALUES (@Title, @Author, @Quantity)";
+            InsertOrUpdateBook(title, author, quantity);
+            
+        }
 
+        public void InsertOrUpdateBook(string title, string author, int quantity)
+        {
             string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
-            using (SqlConnection connection = new SqlConnection(conn))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@Title", titlu);
-                    command.Parameters.AddWithValue("@Author", autor);
-                    command.Parameters.AddWithValue("@Quantity", cantitate);
+            // Check if the book already exists in the database
+            string selectQuery = "SELECT COUNT(*) FROM Books WHERE Title = @Title";
+            string updateQuery = "UPDATE Books SET Quantity = Quantity + @Quantity WHERE Title = @Title";
+            string insertQuery = "INSERT INTO Books (Id, Title, Author, Quantity) VALUES (@Id, @Title, @Author, @Quantity)";
 
+            using (var connection = new SqlConnection(conn))
+            {
+                connection.Open();
+
+                // Start a transaction
+                using (var transaction = connection.BeginTransaction())
+                {
                     try
                     {
-                        connection.Open();
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Carte adăugată cu succes!");
+                        int existingCount;
+                        using (var selectCommand = new SqlCommand(selectQuery, connection, transaction))
+                        {
+                            selectCommand.Parameters.AddWithValue("@Title", title);
+                            existingCount = Convert.ToInt32(selectCommand.ExecuteScalar());
+                        }
+
+                        if (existingCount > 0)
+                        {
+                            // If the book already exists, update the quantity
+                            using (var updateCommand = new SqlCommand(updateQuery, connection, transaction))
+                            {
+                                updateCommand.Parameters.AddWithValue("@Title", title);
+                                updateCommand.Parameters.AddWithValue("@Quantity", quantity);
+                                updateCommand.ExecuteNonQuery();
+                                MessageBox.Show("Cartea deja exista, am modificat cantitatea!");
+                            }
+                        }
+                        else
+                        {
+                            // If the book doesn't exist, insert it
+                            using (var insertCommand = new SqlCommand(insertQuery, connection, transaction))
+                            {
+                                insertCommand.Parameters.AddWithValue("@Title", title);
+                                insertCommand.Parameters.AddWithValue("@Author", author);
+                                insertCommand.Parameters.AddWithValue("@Quantity", quantity);
+                                insertCommand.ExecuteNonQuery();
+                                MessageBox.Show("Carte adăugată cu succes!");
+                            }
+                        }
+
+                        // Commit the transaction
+                        transaction.Commit();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Eroare: " + ex.Message);
+                        // If an error occurs, rollback the transaction
+                        transaction.Rollback();
+                        Console.WriteLine("Error: " + ex.Message);
                     }
                 }
             }

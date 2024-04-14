@@ -112,5 +112,33 @@ namespace LibroTechFiestaV2
                 passwordText.ForeColor = Color.Silver;
             }
         }
+
+        public int GetRowCount ()
+        {
+            int rowCount = 0;
+
+            // SQL query to count the number of rows in the table
+            string query = $"SELECT COUNT(*) FROM Books";
+
+            using (var connection = new SqlConnection(conn))
+            {
+                using (var command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        // Execute the query and get the result
+                        rowCount = Convert.ToInt32(command.ExecuteScalar());
+                        connection.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+
+            return rowCount;
+        }
     }
 }
