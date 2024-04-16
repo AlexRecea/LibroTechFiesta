@@ -26,3 +26,4 @@ C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\Li
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.LibrariansPage.resources
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.AddNewBook.resources
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.ClientsPage.resources
+E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.CreateAccount.resources

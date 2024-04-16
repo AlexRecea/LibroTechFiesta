@@ -47,8 +47,8 @@ namespace LibroTechFiestaV2
             {
                 SqlConnection connection = new SqlConnection(conn);
                 SqlCommand cmd = new SqlCommand(" select * from Clients where email=@email COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
-                cmd.Parameters.AddWithValue("@email", usernameClientText.Text);
-                cmd.Parameters.AddWithValue("@pass", passwordClientText.Text);
+                cmd.Parameters.AddWithValue("@email", usernameClientText.Text.Trim());
+                cmd.Parameters.AddWithValue("@pass", passwordClientText.Text.Trim());
 
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -143,10 +143,40 @@ namespace LibroTechFiestaV2
             return rowCount;
         }
 
+        public int GetClientsCount ()
+        {
+            int clientsCount = 0;
+
+            string query = $"SELECT COUNT(*) FROM Clients";
+
+            using (var connection = new SqlConnection(conn))
+            {
+                using (var command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        // Execute the query and get the result
+                        clientsCount = Convert.ToInt32(command.ExecuteScalar());
+                        connection.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+            return clientsCount;
+        }
+
         private void registerButton_Click(object sender, EventArgs e)
         {
-
+            CreateAccount createAccount = new CreateAccount();
+            createAccount.Show();
+            
         }
+
+        
 
         private void loginLibrariansButton_Click(object sender, EventArgs e)
         {
@@ -154,8 +184,8 @@ namespace LibroTechFiestaV2
             {
                 SqlConnection connection = new SqlConnection(conn);
                 SqlCommand cmd = new SqlCommand(" select * from Librarians where username=@name COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
-                cmd.Parameters.AddWithValue("@name", usernameText.Text);
-                cmd.Parameters.AddWithValue("@pass", passwordText.Text);
+                cmd.Parameters.AddWithValue("@name", usernameText.Text.Trim());
+                cmd.Parameters.AddWithValue("@pass", passwordText.Text.Trim());
 
                 connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
