@@ -77,7 +77,7 @@ namespace LibroTechFiestaV2
             }
         }
 
-        private void showAllBooks ()
+        public void showAllBooks ()
         {
             booksView.Items.Clear();
             
