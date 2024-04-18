@@ -34,13 +34,13 @@ namespace LibroTechFiestaV2
         public void InsertOrUpdateBook(string title, string author, int quantity)
         {
             //Recea
-            string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+            //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
             //Elena
-            //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+            string conn =@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
 
-            // Check if the book already exists in the database
-            string selectQuery = "SELECT COUNT(*) FROM Books WHERE Title = @Title";
+           // Check if the book already exists in the database
+           string selectQuery = "SELECT COUNT(*) FROM Books WHERE Title = @Title";
             string updateQuery = "UPDATE Books SET Quantity = Quantity + @Quantity WHERE Title = @Title";
             string insertQuery = "INSERT INTO Books (Id, Title, Author, Quantity) VALUES (@Id, @Title, @Author, @Quantity)";
 
@@ -94,6 +94,62 @@ namespace LibroTechFiestaV2
                         Console.WriteLine("Error: " + ex.Message);
                     }
                 }
+            }
+        }
+
+        private void newBookTitle_Enter(object sender, EventArgs e)
+        {
+            if (newBookTitle.Text == "Title")
+            {
+                newBookTitle.Text = "";
+
+                newBookTitle.ForeColor = Color.Black;
+            }
+        }
+
+        private void newBookTitle_Leave(object sender, EventArgs e)
+        {
+            if(newBookTitle.Text == "")
+            {
+                newBookTitle.Text = "Title";
+
+                newBookTitle.ForeColor = Color.Silver;
+            }
+        }
+
+        private void newBookAuthor_Enter(object sender, EventArgs e)
+        {
+            if(newBookAuthor.Text == "Author")
+            {
+                newBookAuthor.Text = "";
+                newBookAuthor.ForeColor = Color.Black;
+            }
+        }
+
+        private void newBookAuthor_Leave(object sender, EventArgs e)
+        {
+            if( newBookAuthor.Text == "")
+            {
+                newBookAuthor.Text= "Author";
+                newBookAuthor.ForeColor= Color.Silver;
+            }
+        }
+
+        private void newBookQuantity_Enter(object sender, EventArgs e)
+        {
+            if(newBookQuantity.Text == "Quantity")
+            {
+                newBookQuantity.Text = "";
+                newBookAuthor.ForeColor=Color.Black;
+            }
+        }
+
+        private void newBookQuantity_Leave(object sender, EventArgs e)
+        {
+            if(newBookQuantity.Text == "")
+            {
+                newBookAuthor.Text = "Quantity";
+                newBookQuantity.ForeColor= Color.Silver;
             }
         }
     }

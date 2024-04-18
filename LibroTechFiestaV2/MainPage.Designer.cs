@@ -46,7 +46,7 @@
             this.label1.Location = new System.Drawing.Point(665, 317);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Size = new System.Drawing.Size(0, 23);
             this.label1.TabIndex = 0;
             // 
             // loginButton
@@ -83,7 +83,7 @@
             this.passwordText.Margin = new System.Windows.Forms.Padding(4);
             this.passwordText.MaxLength = 40;
             this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(200, 25);
+            this.passwordText.Size = new System.Drawing.Size(200, 29);
             this.passwordText.TabIndex = 4;
             this.passwordText.Text = "password";
             this.passwordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -95,7 +95,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(665, 375);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 23);
             this.label2.TabIndex = 5;
             // 
             // registerButton
@@ -120,21 +120,31 @@
             // 
             // usernameClientText
             // 
+            this.usernameClientText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.usernameClientText.Location = new System.Drawing.Point(130, 112);
             this.usernameClientText.Name = "usernameClientText";
-            this.usernameClientText.Size = new System.Drawing.Size(100, 25);
+            this.usernameClientText.Size = new System.Drawing.Size(147, 29);
             this.usernameClientText.TabIndex = 8;
+            this.usernameClientText.Text = "email";
+            this.usernameClientText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usernameClientText.Enter += new System.EventHandler(this.usernameClientText_Enter);
+            this.usernameClientText.Leave += new System.EventHandler(this.usernameClientText_Leave);
             // 
             // passwordClientText
             // 
-            this.passwordClientText.Location = new System.Drawing.Point(163, 198);
+            this.passwordClientText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.passwordClientText.Location = new System.Drawing.Point(130, 200);
             this.passwordClientText.Name = "passwordClientText";
-            this.passwordClientText.Size = new System.Drawing.Size(100, 25);
+            this.passwordClientText.Size = new System.Drawing.Size(147, 29);
             this.passwordClientText.TabIndex = 9;
+            this.passwordClientText.Text = "password";
+            this.passwordClientText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwordClientText.Enter += new System.EventHandler(this.passwordClientText_Enter);
+            this.passwordClientText.Leave += new System.EventHandler(this.passwordClientText_Leave);
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgourndLibrary;

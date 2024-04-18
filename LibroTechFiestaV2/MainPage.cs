@@ -30,10 +30,10 @@ namespace LibroTechFiestaV2
         }
 
         //Recea
-        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
         //Elena
-        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         public MainPage()
         {
             InitializeComponent();
@@ -212,6 +212,47 @@ namespace LibroTechFiestaV2
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void usernameClientText_Enter(object sender, EventArgs e)
+        {
+            if (usernameClientText.Text == "email")
+            {
+                usernameClientText.Text = "";
+
+                usernameClientText.ForeColor = Color.Black;
+            }
+        }
+
+        private void usernameClientText_Leave(object sender, EventArgs e)
+        {
+
+            if (usernameClientText.Text == "")
+            {
+                usernameClientText.Text = "email";
+
+                usernameClientText.ForeColor = Color.Silver;
+            }
+        }
+
+        private void passwordClientText_Enter(object sender, EventArgs e)
+        {
+            if (passwordClientText.Text == "password")
+            {
+                passwordClientText.Text = "";
+
+                passwordClientText.ForeColor = Color.Black;
+            }
+        }
+
+        private void passwordClientText_Leave(object sender, EventArgs e)
+        {
+            if(passwordClientText.Text == "")
+            {
+                passwordClientText.Text= "password";
+
+                passwordClientText.ForeColor= Color.Silver;
             }
         }
     }
