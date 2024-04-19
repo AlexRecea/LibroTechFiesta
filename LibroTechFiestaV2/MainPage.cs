@@ -42,7 +42,6 @@ namespace LibroTechFiestaV2
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-
             try
             {
                 SqlConnection connection = new SqlConnection(conn);

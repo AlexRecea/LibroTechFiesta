@@ -97,6 +97,7 @@ namespace LibroTechFiestaV2
             this.Controls.Add(this.newBookQuantity);
             this.Controls.Add(this.newBookAuthor);
             this.Controls.Add(this.newBookTitle);
+            this.Load += new System.EventHandler(this.AddNewBook_Load);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddNewBook";
             this.Text = "Add a New Book";

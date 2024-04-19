@@ -13,7 +13,18 @@ namespace LibroTechFiestaV2
 {
     public partial class AddNewBook : Form
     {
-        public AddNewBook()
+        private void AddNewBook_Load(object sender, EventArgs e)
+        {
+            int xPosition = (Width - newBookTitle.Width) / 2 ;
+            newBookTitle.Location = new Point(xPosition, 100);
+            int xPosition2 = (Width - newBookAuthor.Width) / 2;
+            newBookAuthor.Location = new Point(xPosition2, 150);
+            int xPosition3 = (Width - newBookQuantity.Width) / 2;
+            newBookQuantity.Location = new Point(xPosition3, 200);
+            int xPosition4 = (Width - addNewBookButton.Width) / 2;
+            newBookQuantity.Location = new Point(xPosition4, 250);
+        }
+            public AddNewBook()
         {
             InitializeComponent();
         }
@@ -27,11 +38,11 @@ namespace LibroTechFiestaV2
             int nrOfRows = mainPage.GetRowCount();
             int id = nrOfRows + 1;
 
-            InsertOrUpdateBook(title, author, quantity);
+            InsertOrUpdateBook(title, author, quantity,id);
             
         }
 
-        public void InsertOrUpdateBook(string title, string author, int quantity)
+        public void InsertOrUpdateBook(string title, string author, int quantity,int id)
         {
             //Recea
             //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
@@ -79,6 +90,7 @@ namespace LibroTechFiestaV2
                                 insertCommand.Parameters.AddWithValue("@Title", title);
                                 insertCommand.Parameters.AddWithValue("@Author", author);
                                 insertCommand.Parameters.AddWithValue("@Quantity", quantity);
+                                insertCommand.Parameters.AddWithValue("@Id", id);
                                 insertCommand.ExecuteNonQuery();
                                 MessageBox.Show("Carte adăugată cu succes!");
                             }
@@ -140,7 +152,7 @@ namespace LibroTechFiestaV2
             if(newBookQuantity.Text == "Quantity")
             {
                 newBookQuantity.Text = "";
-                newBookAuthor.ForeColor=Color.Black;
+                newBookQuantity.ForeColor=Color.Black;
             }
         }
 
@@ -148,7 +160,7 @@ namespace LibroTechFiestaV2
         {
             if(newBookQuantity.Text == "")
             {
-                newBookAuthor.Text = "Quantity";
+                newBookQuantity.Text = "Quantity";
                 newBookQuantity.ForeColor= Color.Silver;
             }
         }

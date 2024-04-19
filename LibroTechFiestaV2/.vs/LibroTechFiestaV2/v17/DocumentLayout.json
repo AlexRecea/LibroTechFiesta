@@ -3,66 +3,51 @@
   "WorkspaceRootPath": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\createaccount.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:createaccount.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\addnewbook.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:addnewbook.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\librarianspage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:librarianspage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\resources\\backgroundreg.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:resources\\backgroundreg.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|LibroTechFiestaV2||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:createaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\resources\\backgroundadd.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:resources\\backgroundadd.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ELENA_DESKTOP_PROIECT_II_LIBROTECHFIESTA_LIBROTECHFIESTAV2_DATABASE1.MDF/True/SqlTable/dbo.Books.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\librarianspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:librarianspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\librarianspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:librarianspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\addnewbook.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:addnewbook.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:mainpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\librarianspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:librarianspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:addnewbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\librarianspage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:librarianspage.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|LibroTechFiestaV2||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\resources\\backgroundadd.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:resources\\backgroundadd.jpg||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\clientspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:clientspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\clientspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\clientspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:clientspage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|c:\\users\\elena\\desktop\\proiect ii\\librotechfiesta\\librotechfiestav2\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{BC408C75-A4CB-4504-AA91-8862F0C6CD4A}|LibroTechFiestaV2.csproj|solutionrelative:properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -72,11 +57,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateAccount.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.cs",
+              "RelativeDocumentMoniker": "CreateAccount.cs",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.cs [Design]",
+              "RelativeToolTip": "CreateAccount.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T08:58:25.247Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddNewBook.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.Designer.cs",
+              "RelativeDocumentMoniker": "AddNewBook.Designer.cs",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.Designer.cs",
+              "RelativeToolTip": "AddNewBook.Designer.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAmwGMAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T08:32:59.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateAccount.cs",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.cs",
+              "RelativeDocumentMoniker": "CreateAccount.cs",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.cs",
+              "RelativeToolTip": "CreateAccount.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T08:02:08.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AddNewBook.cs",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.cs",
+              "RelativeDocumentMoniker": "AddNewBook.cs",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.cs",
+              "RelativeToolTip": "AddNewBook.cs",
+              "ViewState": "AQIAAIYAAAAAAAAAAAAmwBgAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T20:11:34.114Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LibrariansPage.cs",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.cs",
+              "RelativeDocumentMoniker": "LibrariansPage.cs",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.cs",
+              "RelativeToolTip": "LibrariansPage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHYAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T10:22:25.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainPage.cs",
+              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\MainPage.cs",
+              "RelativeDocumentMoniker": "MainPage.cs",
+              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\MainPage.cs",
+              "RelativeToolTip": "MainPage.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T18:03:01.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AddNewBook.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.cs",
               "RelativeDocumentMoniker": "AddNewBook.cs",
@@ -88,82 +150,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateAccount.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.Designer.cs",
-              "RelativeDocumentMoniker": "CreateAccount.Designer.cs",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.Designer.cs",
-              "RelativeToolTip": "CreateAccount.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-18T21:02:33.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddNewBook.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.Designer.cs",
-              "RelativeDocumentMoniker": "AddNewBook.Designer.cs",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.Designer.cs",
-              "RelativeToolTip": "AddNewBook.Designer.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAwCEAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-18T20:30:25.565Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "backgroundReg.jpg",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\Resources\\backgroundReg.jpg",
-              "RelativeDocumentMoniker": "Resources\\backgroundReg.jpg",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\Resources\\backgroundReg.jpg",
-              "RelativeToolTip": "Resources\\backgroundReg.jpg",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2024-04-18T21:01:03.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "LibrariansPage.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.Designer.cs",
               "RelativeDocumentMoniker": "LibrariansPage.Designer.cs",
               "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.Designer.cs",
               "RelativeToolTip": "LibrariansPage.Designer.cs",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAYwGYAAABeAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGYAAABeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-18T18:09:45.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateAccount.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.cs",
-              "RelativeDocumentMoniker": "CreateAccount.cs",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\CreateAccount.cs [Design]",
-              "RelativeToolTip": "CreateAccount.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-18T15:20:33.617Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "LibroTechFiestaV2",
               "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibroTechFiestaV2.csproj",
               "RelativeDocumentMoniker": "LibroTechFiestaV2.csproj",
               "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibroTechFiestaV2.csproj",
               "RelativeToolTip": "LibroTechFiestaV2.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-04-18T20:37:38.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-18T20:37:38.756Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "backgroundAdd.jpg",
               "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\Resources\\backgroundAdd.jpg",
               "RelativeDocumentMoniker": "Resources\\backgroundAdd.jpg",
@@ -175,68 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "dbo.Books [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_ELENA_DESKTOP_PROIECT_II_LIBROTECHFIESTA_LIBROTECHFIESTAV2_DATABASE1.MDF/True/SqlTable/dbo.Books.sql",
-              "ToolTip": "dbo.Books [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-04-18T17:27:35.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AddNewBook.cs",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.cs",
-              "RelativeDocumentMoniker": "AddNewBook.cs",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\AddNewBook.cs",
-              "RelativeToolTip": "AddNewBook.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T20:11:34.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MainPage.cs",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\MainPage.cs",
-              "RelativeDocumentMoniker": "MainPage.cs",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\MainPage.cs",
-              "RelativeToolTip": "MainPage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAPIAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T18:03:01.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "LibrariansPage.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.cs",
-              "RelativeDocumentMoniker": "LibrariansPage.cs",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.cs [Design]",
-              "RelativeToolTip": "LibrariansPage.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T12:09:32.778Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LibrariansPage.cs",
-              "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.cs",
-              "RelativeDocumentMoniker": "LibrariansPage.cs",
-              "ToolTip": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\LibrariansPage.cs",
-              "RelativeToolTip": "LibrariansPage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T10:22:25.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
               "Title": "ClientsPage.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\ClientsPage.cs",
               "RelativeDocumentMoniker": "ClientsPage.cs",
@@ -248,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "ClientsPage.cs",
               "DocumentMoniker": "C:\\Users\\Elena\\Desktop\\Proiect II\\LibroTechFiesta\\LibroTechFiestaV2\\ClientsPage.cs",
               "RelativeDocumentMoniker": "ClientsPage.cs",

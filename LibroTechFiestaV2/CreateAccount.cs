@@ -13,13 +13,27 @@ namespace LibroTechFiestaV2
 {
     public partial class CreateAccount : Form
     {
+        private void CreateAccount_Load(object sender, EventArgs e)
+        {
+            int xPosition = (Width - newFirstNameText.Width) / 2;
+            newFirstNameText.Location = new Point(xPosition, 100);
+            newLastNameText.Location = new Point(xPosition, 150);         
+            newPhoneNumberText.Location = new Point(xPosition, 200);         
+            newEmailText.Location = new Point(xPosition, 250);           
+            newPhoneNumberText.Location = new Point(xPosition, 300);
+            int xPosition6 = (Width - createNewAccountButton.Width) / 2;
+            newPhoneNumberText.Location = new Point(xPosition6, 350);
+
+        }
         public CreateAccount()
         {
             InitializeComponent();
         }
-        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        //Recea
+        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
-
+        //Elena
+        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         private void createNewAccountButton_Click(object sender, EventArgs e)
         {
             string newEmail = newEmailText.Text.Trim();
@@ -89,6 +103,97 @@ namespace LibroTechFiestaV2
                         return false; // În caz de eroare, returnează false
                     }
                 }
+            }
+        }
+
+        private void newFirstNameText_Enter(object sender, EventArgs e)
+        {
+            if(newFirstNameText.Text=="First Name")
+            {
+                newFirstNameText.Text = "";
+                newFirstNameText.ForeColor = Color.Black;
+            }
+        }
+
+        private void newFirstNameText_Leave(object sender, EventArgs e)
+        {
+            if (newFirstNameText.Text == "")
+            {
+                newFirstNameText.Text = "First Name";
+                newFirstNameText.ForeColor = Color.Silver;
+            }
+        }
+
+        private void newLastNameText_Enter(object sender, EventArgs e)
+        {
+            if(newLastNameText.Text=="Last Name")
+            {
+                newLastNameText.Text = "";
+                newLastNameText.ForeColor = Color.Black;
+            }
+        }
+
+        private void newLastNameText_Leave(object sender, EventArgs e)
+        {
+            if( newLastNameText.Text == "")
+            {
+                newLastNameText.Text = "Last Name";
+                newLastNameText.ForeColor=Color.Silver;
+            }
+        }
+
+        private void newEmailText_Enter(object sender, EventArgs e)
+        {
+            if (newEmailText.Text == "email")
+            {
+                newEmailText.Text = "";
+                newEmailText.ForeColor=Color.Black;
+            }
+        }
+
+        private void newEmailText_Leave(object sender, EventArgs e)
+        {
+            if (newEmailText.Text == "")
+            {
+                newEmailText.Text = "email";
+                newEmailText.ForeColor=Color.Silver;
+            }
+        }
+
+        private void newPhoneNumberText_Enter(object sender, EventArgs e)
+        {
+            if(newPhoneNumberText.Text=="Phone number")
+            {
+                newPhoneNumberText.Text = "";
+                newPhoneNumberText.ForeColor=Color.Black;
+            }
+        }
+
+        private void newPhoneNumberText_Leave(object sender, EventArgs e)
+        {
+            if (newPhoneNumberText.Text == "")
+            {
+                newPhoneNumberText.Text = "Phone number";
+                newPhoneNumberText.ForeColor = Color.Silver;
+            }
+
+        }
+
+        private void newPasswordText_Enter(object sender, EventArgs e)
+        {
+            if (newPasswordText.Text == "Password")
+            {
+                newPasswordText.Text = "";
+                newPasswordText.ForeColor=Color.Black;
+            }
+        }
+
+        private void newPasswordText_Leave(object sender, EventArgs e)
+        {
+            if(newPasswordText.Text == "")
+            {
+                newPasswordText.Text = "Password";
+                newPasswordText.ForeColor=Color.Silver;
             }
         }
     }
