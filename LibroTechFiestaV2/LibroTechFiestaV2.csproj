@@ -139,6 +139,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\backgroundClient.jpg" />
+    <None Include="Resources\backgroundC.jpg" />
     <None Include="Resources\backgroundReg.jpg" />
     <None Include="Resources\backgroundAdd.jpg" />
     <None Include="Resources\backgroundL.jpg" />

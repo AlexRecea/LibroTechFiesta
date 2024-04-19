@@ -8,22 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LibroTechFiestaV2
 {
     public partial class CreateAccount : Form
     {
         private void CreateAccount_Load(object sender, EventArgs e)
-        {
+        {/*
             int xPosition = (Width - newFirstNameText.Width) / 2;
-            newFirstNameText.Location = new Point(xPosition, 100);
-            newLastNameText.Location = new Point(xPosition, 150);         
-            newPhoneNumberText.Location = new Point(xPosition, 200);         
-            newEmailText.Location = new Point(xPosition, 250);           
-            newPhoneNumberText.Location = new Point(xPosition, 300);
-            int xPosition6 = (Width - createNewAccountButton.Width) / 2;
-            newPhoneNumberText.Location = new Point(xPosition6, 350);
-
+            int yPosition = 50;
+            newFirstNameText.Location = new Point(xPosition, yPosition);
+            newLastNameText.Location = new Point(xPosition, yPosition+newFirstNameText.Height+20);         
+            newPhoneNumberText.Location = new Point(xPosition, yPosition+2*(newFirstNameText.Height + 20));         
+            newEmailText.Location = new Point(xPosition, yPosition+3*(newFirstNameText.Height + 20));           
+            newPhoneNumberText.Location = new Point(xPosition, yPosition+4*(newFirstNameText.Height + 20));
+            newPhoneNumberText.Location = new Point(xPosition, yPosition + 5 * (newFirstNameText.Height + 20));
+            */
         }
         public CreateAccount()
         {
@@ -190,10 +191,10 @@ namespace LibroTechFiestaV2
 
         private void newPasswordText_Leave(object sender, EventArgs e)
         {
-            if(newPasswordText.Text == "")
+            if (newPasswordText.Text == "")
             {
                 newPasswordText.Text = "Password";
-                newPasswordText.ForeColor=Color.Silver;
+                newPasswordText.ForeColor = Color.Silver;
             }
         }
     }

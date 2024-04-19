@@ -46,9 +46,9 @@
             // searchBox
             // 
             this.searchBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.searchBox.Location = new System.Drawing.Point(1235, 41);
+            this.searchBox.Location = new System.Drawing.Point(1120, 41);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(100, 29);
+            this.searchBox.Size = new System.Drawing.Size(215, 29);
             this.searchBox.TabIndex = 2;
             this.searchBox.Text = "Search";
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -57,7 +57,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(1241, 88);
+            this.searchButton.Location = new System.Drawing.Point(1184, 94);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(94, 60);
             this.searchButton.TabIndex = 3;
@@ -68,7 +68,7 @@
             // backToMainPageButton
             // 
             this.backToMainPageButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.backToMainPageButton.Location = new System.Drawing.Point(1217, 461);
+            this.backToMainPageButton.Location = new System.Drawing.Point(894, 530);
             this.backToMainPageButton.Name = "backToMainPageButton";
             this.backToMainPageButton.Size = new System.Drawing.Size(151, 77);
             this.backToMainPageButton.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // addNewBook
             // 
-            this.addNewBook.Location = new System.Drawing.Point(851, 532);
+            this.addNewBook.Location = new System.Drawing.Point(392, 526);
             this.addNewBook.Name = "addNewBook";
             this.addNewBook.Size = new System.Drawing.Size(173, 81);
             this.addNewBook.TabIndex = 6;

@@ -30,8 +30,6 @@ namespace LibroTechFiestaV2
         /// </summary>
         private void InitializeComponent()
         {
-            this.BackgroundImage = Properties.Resources.backgroundAdd;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
             this.newBookTitle = new System.Windows.Forms.TextBox();
             this.newBookAuthor = new System.Windows.Forms.TextBox();
             this.newBookQuantity = new System.Windows.Forms.TextBox();
@@ -41,8 +39,8 @@ namespace LibroTechFiestaV2
             // newBookTitle
             // 
             this.newBookTitle.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newBookTitle.Location = new System.Drawing.Point(291, 162);
-            this.newBookTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newBookTitle.Location = new System.Drawing.Point(326, 136);
+            this.newBookTitle.Margin = new System.Windows.Forms.Padding(4);
             this.newBookTitle.Name = "newBookTitle";
             this.newBookTitle.Size = new System.Drawing.Size(236, 22);
             this.newBookTitle.TabIndex = 0;
@@ -54,10 +52,10 @@ namespace LibroTechFiestaV2
             // newBookAuthor
             // 
             this.newBookAuthor.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newBookAuthor.Location = new System.Drawing.Point(314, 250);
-            this.newBookAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newBookAuthor.Location = new System.Drawing.Point(326, 207);
+            this.newBookAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.newBookAuthor.Name = "newBookAuthor";
-            this.newBookAuthor.Size = new System.Drawing.Size(183, 22);
+            this.newBookAuthor.Size = new System.Drawing.Size(236, 22);
             this.newBookAuthor.TabIndex = 1;
             this.newBookAuthor.Text = "Author";
             this.newBookAuthor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -67,10 +65,10 @@ namespace LibroTechFiestaV2
             // newBookQuantity
             // 
             this.newBookQuantity.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newBookQuantity.Location = new System.Drawing.Point(341, 335);
-            this.newBookQuantity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newBookQuantity.Location = new System.Drawing.Point(383, 270);
+            this.newBookQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.newBookQuantity.Name = "newBookQuantity";
-            this.newBookQuantity.Size = new System.Drawing.Size(132, 22);
+            this.newBookQuantity.Size = new System.Drawing.Size(115, 22);
             this.newBookQuantity.TabIndex = 2;
             this.newBookQuantity.Text = "Quantity";
             this.newBookQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -79,10 +77,10 @@ namespace LibroTechFiestaV2
             // 
             // addNewBookButton
             // 
-            this.addNewBookButton.Location = new System.Drawing.Point(355, 411);
-            this.addNewBookButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addNewBookButton.Location = new System.Drawing.Point(402, 350);
+            this.addNewBookButton.Margin = new System.Windows.Forms.Padding(4);
             this.addNewBookButton.Name = "addNewBookButton";
-            this.addNewBookButton.Size = new System.Drawing.Size(100, 28);
+            this.addNewBookButton.Size = new System.Drawing.Size(79, 28);
             this.addNewBookButton.TabIndex = 3;
             this.addNewBookButton.Text = "Add";
             this.addNewBookButton.UseVisualStyleBackColor = true;
@@ -92,15 +90,17 @@ namespace LibroTechFiestaV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundAdd;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(888, 543);
             this.Controls.Add(this.addNewBookButton);
             this.Controls.Add(this.newBookQuantity);
             this.Controls.Add(this.newBookAuthor);
             this.Controls.Add(this.newBookTitle);
-            this.Load += new System.EventHandler(this.AddNewBook_Load);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddNewBook";
             this.Text = "Add a New Book";
+            this.Load += new System.EventHandler(this.AddNewBook_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

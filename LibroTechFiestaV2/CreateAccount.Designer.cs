@@ -41,7 +41,7 @@ namespace LibroTechFiestaV2
             // newFirstNameText
             // 
             this.newFirstNameText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newFirstNameText.Location = new System.Drawing.Point(240, 93);
+            this.newFirstNameText.Location = new System.Drawing.Point(240, 100);
             this.newFirstNameText.Margin = new System.Windows.Forms.Padding(4);
             this.newFirstNameText.Name = "newFirstNameText";
             this.newFirstNameText.Size = new System.Drawing.Size(132, 22);
@@ -54,7 +54,7 @@ namespace LibroTechFiestaV2
             // newLastNameText
             // 
             this.newLastNameText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newLastNameText.Location = new System.Drawing.Point(240, 161);
+            this.newLastNameText.Location = new System.Drawing.Point(240, 150);
             this.newLastNameText.Margin = new System.Windows.Forms.Padding(4);
             this.newLastNameText.Name = "newLastNameText";
             this.newLastNameText.Size = new System.Drawing.Size(132, 22);
@@ -67,7 +67,7 @@ namespace LibroTechFiestaV2
             // newEmailText
             // 
             this.newEmailText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newEmailText.Location = new System.Drawing.Point(240, 229);
+            this.newEmailText.Location = new System.Drawing.Point(240, 200);
             this.newEmailText.Margin = new System.Windows.Forms.Padding(4);
             this.newEmailText.Name = "newEmailText";
             this.newEmailText.Size = new System.Drawing.Size(132, 22);
@@ -80,7 +80,7 @@ namespace LibroTechFiestaV2
             // newPhoneNumberText
             // 
             this.newPhoneNumberText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newPhoneNumberText.Location = new System.Drawing.Point(240, 281);
+            this.newPhoneNumberText.Location = new System.Drawing.Point(240, 250);
             this.newPhoneNumberText.Margin = new System.Windows.Forms.Padding(4);
             this.newPhoneNumberText.Name = "newPhoneNumberText";
             this.newPhoneNumberText.Size = new System.Drawing.Size(132, 22);
@@ -93,7 +93,7 @@ namespace LibroTechFiestaV2
             // newPasswordText
             // 
             this.newPasswordText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newPasswordText.Location = new System.Drawing.Point(240, 343);
+            this.newPasswordText.Location = new System.Drawing.Point(240, 300);
             this.newPasswordText.Margin = new System.Windows.Forms.Padding(4);
             this.newPasswordText.Name = "newPasswordText";
             this.newPasswordText.Size = new System.Drawing.Size(132, 22);
@@ -105,7 +105,7 @@ namespace LibroTechFiestaV2
             // 
             // createNewAccountButton
             // 
-            this.createNewAccountButton.Location = new System.Drawing.Point(240, 417);
+            this.createNewAccountButton.Location = new System.Drawing.Point(240, 400);
             this.createNewAccountButton.Margin = new System.Windows.Forms.Padding(4);
             this.createNewAccountButton.Name = "createNewAccountButton";
             this.createNewAccountButton.Size = new System.Drawing.Size(132, 28);

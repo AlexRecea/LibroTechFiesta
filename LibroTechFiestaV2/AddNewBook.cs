@@ -14,7 +14,7 @@ namespace LibroTechFiestaV2
     public partial class AddNewBook : Form
     {
         private void AddNewBook_Load(object sender, EventArgs e)
-        {
+        {/*
             int xPosition = (Width - newBookTitle.Width) / 2 ;
             newBookTitle.Location = new Point(xPosition, 100);
             int xPosition2 = (Width - newBookAuthor.Width) / 2;
@@ -22,7 +22,7 @@ namespace LibroTechFiestaV2
             int xPosition3 = (Width - newBookQuantity.Width) / 2;
             newBookQuantity.Location = new Point(xPosition3, 200);
             int xPosition4 = (Width - addNewBookButton.Width) / 2;
-            newBookQuantity.Location = new Point(xPosition4, 250);
+            newBookQuantity.Location = new Point(xPosition4, 250);*/
         }
             public AddNewBook()
         {
