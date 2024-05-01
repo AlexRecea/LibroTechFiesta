@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Data.SqlClient;
+using System.Collections;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LibroTechFiestaV2
 {
@@ -28,24 +30,27 @@ namespace LibroTechFiestaV2
             loginButton.Location = new System.Drawing.Point(xPosition2, 300);
             registerButton.Location = new System.Drawing.Point(xPosition2, 350);
         }
-
+        
         //Recea
-        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
         //Elena
-        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         public MainPage()
         {
             InitializeComponent();
+
             
         }
+        
+
 
         private void loginButton_Click(object sender, EventArgs e)
         {
             try
             {
                 SqlConnection connection = new SqlConnection(conn);
-                SqlCommand cmd = new SqlCommand(" select * from Clients where email=@email COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
+                SqlCommand cmd = new SqlCommand(" select Id from Clients where email=@email COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
                 cmd.Parameters.AddWithValue("@email", usernameClientText.Text.Trim());
                 cmd.Parameters.AddWithValue("@pass", passwordClientText.Text.Trim());
 
@@ -56,10 +61,13 @@ namespace LibroTechFiestaV2
                 connection.Close();
 
                 int count = ds.Tables[0].Rows.Count;
-
+                int clientId = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
+                
+                Console.WriteLine("Id client de pe prima pagina este: " + clientId);
                 if (count == 1)
                 {
                     ClientsPage clientsPage = new ClientsPage();
+                    clientsPage.SetClientId(clientId);
                     //MessageBox.Show("Succesfully Login!");
                     this.Hide();
                     //this.Close();
@@ -77,7 +85,7 @@ namespace LibroTechFiestaV2
             }
 
         }
-
+        
         private void UsernameText_Enter(object sender, EventArgs e)
         {
             if (usernameText.Text == "username")
@@ -142,6 +150,31 @@ namespace LibroTechFiestaV2
             return rowCount;
         }
 
+        public int GetNrOfLoans ()
+        {
+            int nrOfLoans = 0;
+            string querry = $"SELECT COUNT(*) FROM LOANS";
+
+            using (var connection = new SqlConnection(conn))
+            {
+                using (var command = new SqlCommand(querry, connection))
+                {
+                    try
+                    {
+                    connection.Open();
+                    nrOfLoans = Convert.ToInt32(command.ExecuteScalar());
+                    connection.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+                
+            }
+            return nrOfLoans;
+        }
+
         public int GetClientsCount ()
         {
             int clientsCount = 0;
@@ -168,14 +201,43 @@ namespace LibroTechFiestaV2
             return clientsCount;
         }
 
+        
+        //se poate sterge aceasta functie 
+
+        public static (string, string) GetUsernameAndPassword(System.Windows.Forms.TextBox usernameClientText, System.Windows.Forms.TextBox passwordClientText)
+        {
+            string username = usernameClientText.Text;
+            string password = passwordClientText.Text;
+            return (username, password);
+        }
+
         private void registerButton_Click(object sender, EventArgs e)
         {
             CreateAccount createAccount = new CreateAccount();
             createAccount.Show();
-            
         }
 
-        
+        /*
+        public int GetClientId()
+        {
+            int clientId = -1; // Valoare implicită pentru ID-ul clientului (în cazul în care nu este găsit niciun utilizator)
+
+            SqlConnection connection = new SqlConnection(conn);
+            SqlCommand cmd = new SqlCommand(" select Id from Clients where email=@email COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
+            cmd.Parameters.AddWithValue("@email", usernameClientText.Text.Trim());
+            cmd.Parameters.AddWithValue("@pass", passwordClientText.Text.Trim());
+
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+            connection.Close();
+
+            int count = ds.Tables[0].Rows.Count;
+            clientId = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
+            return clientId;
+        }
+        */
 
         private void loginLibrariansButton_Click(object sender, EventArgs e)
         {
