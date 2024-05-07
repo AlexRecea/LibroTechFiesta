@@ -31,10 +31,10 @@ namespace LibroTechFiestaV2
             InitializeComponent();
         }
         //Recea
-        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
         //Elena
-        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         private void createNewAccountButton_Click(object sender, EventArgs e)
         {
             string newEmail = newEmailText.Text.Trim();
@@ -66,6 +66,7 @@ namespace LibroTechFiestaV2
                             insertCommand.ExecuteNonQuery();
                             MessageBox.Show("Cont nou creat cu succes!");
                             ClientsPage clientsPage = new ClientsPage();
+                            clientsPage.SetClientId(nrOfClients);
                             clientsPage.Show();
                             this.Close();
                         }
@@ -163,7 +164,7 @@ namespace LibroTechFiestaV2
 
         private void newPhoneNumberText_Enter(object sender, EventArgs e)
         {
-            if(newPhoneNumberText.Text=="Phone number")
+            if(newPhoneNumberText.Text=="Phone")
             {
                 newPhoneNumberText.Text = "";
                 newPhoneNumberText.ForeColor=Color.Black;
@@ -174,7 +175,7 @@ namespace LibroTechFiestaV2
         {
             if (newPhoneNumberText.Text == "")
             {
-                newPhoneNumberText.Text = "Phone number";
+                newPhoneNumberText.Text = "Phone";
                 newPhoneNumberText.ForeColor = Color.Silver;
             }
 
