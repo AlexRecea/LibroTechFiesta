@@ -16,10 +16,10 @@ namespace LibroTechFiestaV2
     public partial class ClientsPage : Form
     {
         //Recea
-        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
         //Elena
-        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         DataSet dsClients;
         DataSet dsBooks;
         DataSet dsOwnedBooks;
@@ -39,9 +39,9 @@ namespace LibroTechFiestaV2
             booksOwned.Columns.Add("Id", 60);
             booksOwned.Columns.Add("Titlul", 200);
             booksOwned.Columns.Add("Autorul", 200);
-            showAllBooks();
             showLoanedBooks();
-            
+            showAllBooks();
+           
         }
         int clientId;
         public void SetClientId (int id)
@@ -80,7 +80,7 @@ namespace LibroTechFiestaV2
                 listViewItem.Tag = id;
                 bookListClients.Items.Add(listViewItem);
             }
-            //connection.Close();
+            connection.Close();
             showLoanedBooks();
         }
 
@@ -312,10 +312,18 @@ namespace LibroTechFiestaV2
             showLoanedBooks();
             showAllBooks();
         }
-
+        /*
         private void showLoanedButton_Click(object sender, EventArgs e)
         {
             showLoanedBooks();
+        }
+        */
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+                this.Hide();
+                this.Close();
+                MainPage mainPage = new MainPage();
+                mainPage.Show();
         }
     }
 }

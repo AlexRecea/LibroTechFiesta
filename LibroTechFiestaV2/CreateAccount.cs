@@ -5,36 +5,47 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace LibroTechFiestaV2
 {
     public partial class CreateAccount : Form
     {
-        private void CreateAccount_Load(object sender, EventArgs e)
-        {/*
-            int xPosition = (Width - newFirstNameText.Width) / 2;
-            int yPosition = 50;
-            newFirstNameText.Location = new Point(xPosition, yPosition);
-            newLastNameText.Location = new Point(xPosition, yPosition+newFirstNameText.Height+20);         
-            newPhoneNumberText.Location = new Point(xPosition, yPosition+2*(newFirstNameText.Height + 20));         
-            newEmailText.Location = new Point(xPosition, yPosition+3*(newFirstNameText.Height + 20));           
-            newPhoneNumberText.Location = new Point(xPosition, yPosition+4*(newFirstNameText.Height + 20));
-            newPhoneNumberText.Location = new Point(xPosition, yPosition + 5 * (newFirstNameText.Height + 20));
-            */
-        }
+        
         public CreateAccount()
         {
             InitializeComponent();
+            this.Resize+= CreateAccount_Resize;
+            CenterObjects();
+
+        }
+        private void CreateAccount_Resize(object sender, EventArgs e)
+        {
+            CenterObjects();
+        }
+        private void CenterObjects()
+        {
+            int xPosition = (this.Width - newFirstNameText.Width) / 2;
+            int yPosition = 100;
+            int dis = 40;
+            newFirstNameText.Location = new Point(xPosition, yPosition);
+            newLastNameText.Location = new Point(xPosition, yPosition + dis);
+            newPhoneNumberText.Location = new Point(xPosition, yPosition + 2 * dis);
+            newEmailText.Location = new Point(xPosition, yPosition + 3 * dis);
+            newPasswordText.Location = new Point(xPosition, yPosition + 4 * dis);
+            int xPosition2 = (this.Width - createNewAccountButton.Width) / 2;
+            createNewAccountButton.Location = new Point(xPosition2, yPosition + 5 * dis);
         }
         //Recea
-        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
         //Elena
-        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         private void createNewAccountButton_Click(object sender, EventArgs e)
         {
             string newEmail = newEmailText.Text.Trim();
@@ -46,31 +57,38 @@ namespace LibroTechFiestaV2
             {
                 if (!CheckIfUserExists(newEmail))
                 {
-                    string insertQuery = "INSERT INTO Clients (Id, FirstName, LastName, Email, PhoneNumber, Password) VALUES (@Id, @FirstName, @LastName, @Email, @PhoneNumber, @Password)";
-                    string firstName = newFirstNameText.Text.Trim();
-                    string lastName = newLastNameText.Text.Trim();
-                    string phoneNumber = newPhoneNumberText.Text.Trim();
-                    string password = newPasswordText.Text.Trim();
-
-                    using (var connection = new SqlConnection(conn))
+                    if (IsValidEmail(newEmail))
                     {
-                        connection.Open();
-                        using (var insertCommand = new SqlCommand(insertQuery, connection))
+                        string insertQuery = "INSERT INTO Clients (Id, FirstName, LastName, Email, PhoneNumber, Password) VALUES (@Id, @FirstName, @LastName, @Email, @PhoneNumber, @Password)";
+                        string firstName = newFirstNameText.Text.Trim();
+                        string lastName = newLastNameText.Text.Trim();
+                        string phoneNumber = newPhoneNumberText.Text.Trim();
+                        string password = newPasswordText.Text.Trim();
+
+
+                        using (var connection = new SqlConnection(conn))
                         {
-                            insertCommand.Parameters.AddWithValue("@Id", nrOfClients);
-                            insertCommand.Parameters.AddWithValue("@FirstName", firstName);
-                            insertCommand.Parameters.AddWithValue("@LastName", lastName);
-                            insertCommand.Parameters.AddWithValue("@Email", newEmail);
-                            insertCommand.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-                            insertCommand.Parameters.AddWithValue("@Password", password);
-                            insertCommand.ExecuteNonQuery();
-                            MessageBox.Show("Cont nou creat cu succes!");
-                            ClientsPage clientsPage = new ClientsPage();
-                            clientsPage.SetClientId(nrOfClients);
-                            clientsPage.Show();
-                            this.Close();
+                            connection.Open();
+                            using (var insertCommand = new SqlCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@Id", nrOfClients);
+                                insertCommand.Parameters.AddWithValue("@FirstName", firstName);
+                                insertCommand.Parameters.AddWithValue("@LastName", lastName);
+                                insertCommand.Parameters.AddWithValue("@Email", newEmail);
+                                insertCommand.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                                insertCommand.Parameters.AddWithValue("@Password", password);
+                                insertCommand.ExecuteNonQuery();
+                                MessageBox.Show("Cont nou creat cu succes!");
+                                ClientsPage clientsPage = new ClientsPage();
+                                clientsPage.SetClientId(nrOfClients);
+                                clientsPage.Show();
+                                this.Close();
+                            }
+                            connection.Close();
                         }
-                        connection.Close();
+                    }else
+                    {
+                        MessageBox.Show("Email-ul nu este valid");
                     }
                 }
                 else
@@ -107,7 +125,18 @@ namespace LibroTechFiestaV2
                 }
             }
         }
-
+        static bool IsValidEmail(string email)
+        {
+            try
+            {
+                MailAddress mailAddress = new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
         private void newFirstNameText_Enter(object sender, EventArgs e)
         {
             if(newFirstNameText.Text=="First Name")
@@ -164,7 +193,7 @@ namespace LibroTechFiestaV2
 
         private void newPhoneNumberText_Enter(object sender, EventArgs e)
         {
-            if(newPhoneNumberText.Text=="Phone")
+            if(newPhoneNumberText.Text=="Phone number")
             {
                 newPhoneNumberText.Text = "";
                 newPhoneNumberText.ForeColor=Color.Black;
@@ -175,7 +204,7 @@ namespace LibroTechFiestaV2
         {
             if (newPhoneNumberText.Text == "")
             {
-                newPhoneNumberText.Text = "Phone";
+                newPhoneNumberText.Text = "Phone number";
                 newPhoneNumberText.ForeColor = Color.Silver;
             }
 

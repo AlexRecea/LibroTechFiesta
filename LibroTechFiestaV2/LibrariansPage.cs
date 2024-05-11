@@ -13,13 +13,26 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace LibroTechFiestaV2
 {
     public partial class LibrariansPage : Form
-    {
-        
+    {/*
+        private void LibrariaPage_Load(object sender, EventArgs e)
+        {
+            int xPosition = (Screen.PrimaryScreen.Bounds.Width - usernameText.Width) / 2 + 400;
+            usernameText.Location = new System.Drawing.Point(xPosition, 200);
+            passwordText.Location = new System.Drawing.Point(xPosition, 250);
+            loginLibrariansButton.Location = new System.Drawing.Point(xPosition, 300);
+
+            int xPosition2 = (Screen.PrimaryScreen.Bounds.Width - passwordText.Width) / 2 - 200;
+            usernameClientText.Location = new System.Drawing.Point(xPosition2, 200);
+            passwordClientText.Location = new System.Drawing.Point(xPosition2, 250);
+            loginButton.Location = new System.Drawing.Point(xPosition2, 300);
+            registerButton.Location = new System.Drawing.Point(xPosition2, 350);
+        }
+        */
         //Recea
-        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
         //Elena
-        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         DataSet dsClients;
         DataSet dsBooks;
         public LibrariansPage()

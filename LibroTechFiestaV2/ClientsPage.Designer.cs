@@ -35,22 +35,25 @@
             this.booksOwned = new System.Windows.Forms.ListView();
             this.returnButton = new System.Windows.Forms.Button();
             this.showLoanedButton = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bookListClients
             // 
             this.bookListClients.HideSelection = false;
-            this.bookListClients.Location = new System.Drawing.Point(44, 42);
+            this.bookListClients.Location = new System.Drawing.Point(20, 20);
+            this.bookListClients.Margin = new System.Windows.Forms.Padding(4);
             this.bookListClients.Name = "bookListClients";
-            this.bookListClients.Size = new System.Drawing.Size(680, 326);
+            this.bookListClients.Size = new System.Drawing.Size(900, 400);
             this.bookListClients.TabIndex = 5;
             this.bookListClients.UseCompatibleStateImageBehavior = false;
             // 
             // loanButton
             // 
-            this.loanButton.Location = new System.Drawing.Point(806, 254);
+            this.loanButton.Location = new System.Drawing.Point(1069, 351);
+            this.loanButton.Margin = new System.Windows.Forms.Padding(4);
             this.loanButton.Name = "loanButton";
-            this.loanButton.Size = new System.Drawing.Size(75, 23);
+            this.loanButton.Size = new System.Drawing.Size(100, 50);
             this.loanButton.TabIndex = 1;
             this.loanButton.Text = "Loan";
             this.loanButton.UseVisualStyleBackColor = true;
@@ -59,10 +62,10 @@
             // searchBox
             // 
             this.searchBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.searchBox.Location = new System.Drawing.Point(840, 33);
-            this.searchBox.Margin = new System.Windows.Forms.Padding(2);
+            this.searchBox.Location = new System.Drawing.Point(1112, 50);
+            this.searchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(162, 20);
+            this.searchBox.Size = new System.Drawing.Size(220, 30);
             this.searchBox.TabIndex = 2;
             this.searchBox.Text = "Search";
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -71,10 +74,10 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(888, 76);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
+            this.searchButton.Location = new System.Drawing.Point(1185, 100);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(70, 49);
+            this.searchButton.Size = new System.Drawing.Size(90, 60);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -83,17 +86,19 @@
             // booksOwned
             // 
             this.booksOwned.HideSelection = false;
-            this.booksOwned.Location = new System.Drawing.Point(44, 471);
+            this.booksOwned.Location = new System.Drawing.Point(59, 580);
+            this.booksOwned.Margin = new System.Windows.Forms.Padding(4);
             this.booksOwned.Name = "booksOwned";
-            this.booksOwned.Size = new System.Drawing.Size(525, 179);
+            this.booksOwned.Size = new System.Drawing.Size(699, 219);
             this.booksOwned.TabIndex = 6;
             this.booksOwned.UseCompatibleStateImageBehavior = false;
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(736, 582);
+            this.returnButton.Location = new System.Drawing.Point(837, 704);
+            this.returnButton.Margin = new System.Windows.Forms.Padding(4);
             this.returnButton.Name = "returnButton";
-            this.returnButton.Size = new System.Drawing.Size(126, 44);
+            this.returnButton.Size = new System.Drawing.Size(168, 54);
             this.returnButton.TabIndex = 7;
             this.returnButton.Text = "Return A Book";
             this.returnButton.UseVisualStyleBackColor = true;
@@ -101,20 +106,32 @@
             // 
             // showLoanedButton
             // 
-            this.showLoanedButton.Location = new System.Drawing.Point(736, 488);
+            this.showLoanedButton.Location = new System.Drawing.Point(837, 580);
+            this.showLoanedButton.Margin = new System.Windows.Forms.Padding(4);
             this.showLoanedButton.Name = "showLoanedButton";
-            this.showLoanedButton.Size = new System.Drawing.Size(110, 38);
+            this.showLoanedButton.Size = new System.Drawing.Size(168, 47);
             this.showLoanedButton.TabIndex = 8;
             this.showLoanedButton.Text = "Show Loaned Books";
             this.showLoanedButton.UseVisualStyleBackColor = true;
-            this.showLoanedButton.Click += new System.EventHandler(this.showLoanedButton_Click);
+          
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(1205, 723);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(139, 76);
+            this.buttonBack.TabIndex = 10;
+            this.buttonBack.Text = "Back to Main Page";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // ClientsPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundClient;
-            this.ClientSize = new System.Drawing.Size(1171, 695);
+            this.ClientSize = new System.Drawing.Size(1378, 855);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.showLoanedButton);
             this.Controls.Add(this.returnButton);
             this.Controls.Add(this.booksOwned);
@@ -123,7 +140,7 @@
             this.Controls.Add(this.loanButton);
             this.Controls.Add(this.bookListClients);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ClientsPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClientsPage";
@@ -142,5 +159,6 @@
         private System.Windows.Forms.ListView booksOwned;
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Button showLoanedButton;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

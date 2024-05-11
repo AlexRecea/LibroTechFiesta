@@ -13,20 +13,34 @@ namespace LibroTechFiestaV2
 {
     public partial class AddNewBook : Form
     {
-        private void AddNewBook_Load(object sender, EventArgs e)
-        {/*
-            int xPosition = (Width - newBookTitle.Width) / 2 ;
-            newBookTitle.Location = new Point(xPosition, 100);
-            int xPosition2 = (Width - newBookAuthor.Width) / 2;
-            newBookAuthor.Location = new Point(xPosition2, 150);
-            int xPosition3 = (Width - newBookQuantity.Width) / 2;
-            newBookQuantity.Location = new Point(xPosition3, 200);
-            int xPosition4 = (Width - addNewBookButton.Width) / 2;
-            newBookQuantity.Location = new Point(xPosition4, 250);*/
-        }
             public AddNewBook()
         {
             InitializeComponent();
+            this.Resize += AddNewBook_Resize1;
+            CenterObjects();
+        }
+
+        private void AddNewBook_Resize1(object sender, EventArgs e)
+        {
+            CenterObjects();
+        }
+
+        public void CenterObjects()
+        {
+            int xPosition = (this.Width - newBookTitle.Width) / 2;
+            newBookTitle.Location = new Point(xPosition, 100);
+            int xPosition2 = (this.Width - newBookAuthor.Width) / 2;
+            newBookAuthor.Location = new Point(xPosition2, 150);
+            int xPosition3 = (this.Width - newBookQuantity.Width) / 2;
+            newBookQuantity.Location = new Point(xPosition3, 200);
+            int xPosition4 = (this.Width - addNewBookButton.Width) / 2;
+            addNewBookButton.Location = new Point(xPosition4, 250);
+
+        }
+
+        private void AddNewBook_Resize(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void addNewBookButton_Click(object sender, EventArgs e)

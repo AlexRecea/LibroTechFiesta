@@ -44,7 +44,7 @@ namespace LibroTechFiestaV2
             this.newFirstNameText.Location = new System.Drawing.Point(240, 100);
             this.newFirstNameText.Margin = new System.Windows.Forms.Padding(4);
             this.newFirstNameText.Name = "newFirstNameText";
-            this.newFirstNameText.Size = new System.Drawing.Size(132, 22);
+            this.newFirstNameText.Size = new System.Drawing.Size(177, 22);
             this.newFirstNameText.TabIndex = 0;
             this.newFirstNameText.Text = "First Name";
             this.newFirstNameText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -54,10 +54,10 @@ namespace LibroTechFiestaV2
             // newLastNameText
             // 
             this.newLastNameText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.newLastNameText.Location = new System.Drawing.Point(240, 150);
+            this.newLastNameText.Location = new System.Drawing.Point(240, 151);
             this.newLastNameText.Margin = new System.Windows.Forms.Padding(4);
             this.newLastNameText.Name = "newLastNameText";
-            this.newLastNameText.Size = new System.Drawing.Size(132, 22);
+            this.newLastNameText.Size = new System.Drawing.Size(177, 22);
             this.newLastNameText.TabIndex = 1;
             this.newLastNameText.Text = "Last Name";
             this.newLastNameText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -70,7 +70,7 @@ namespace LibroTechFiestaV2
             this.newEmailText.Location = new System.Drawing.Point(240, 200);
             this.newEmailText.Margin = new System.Windows.Forms.Padding(4);
             this.newEmailText.Name = "newEmailText";
-            this.newEmailText.Size = new System.Drawing.Size(132, 22);
+            this.newEmailText.Size = new System.Drawing.Size(177, 22);
             this.newEmailText.TabIndex = 2;
             this.newEmailText.Text = "email";
             this.newEmailText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -83,7 +83,7 @@ namespace LibroTechFiestaV2
             this.newPhoneNumberText.Location = new System.Drawing.Point(240, 250);
             this.newPhoneNumberText.Margin = new System.Windows.Forms.Padding(4);
             this.newPhoneNumberText.Name = "newPhoneNumberText";
-            this.newPhoneNumberText.Size = new System.Drawing.Size(132, 22);
+            this.newPhoneNumberText.Size = new System.Drawing.Size(177, 22);
             this.newPhoneNumberText.TabIndex = 3;
             this.newPhoneNumberText.Text = "Phone number";
             this.newPhoneNumberText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -96,7 +96,7 @@ namespace LibroTechFiestaV2
             this.newPasswordText.Location = new System.Drawing.Point(240, 300);
             this.newPasswordText.Margin = new System.Windows.Forms.Padding(4);
             this.newPasswordText.Name = "newPasswordText";
-            this.newPasswordText.Size = new System.Drawing.Size(132, 22);
+            this.newPasswordText.Size = new System.Drawing.Size(177, 22);
             this.newPasswordText.TabIndex = 4;
             this.newPasswordText.Text = "Password";
             this.newPasswordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -120,7 +120,7 @@ namespace LibroTechFiestaV2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundReg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(707, 637);
+            this.ClientSize = new System.Drawing.Size(622, 637);
             this.Controls.Add(this.createNewAccountButton);
             this.Controls.Add(this.newPasswordText);
             this.Controls.Add(this.newPhoneNumberText);
@@ -130,7 +130,7 @@ namespace LibroTechFiestaV2
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateAccount";
             this.Text = "Create a New Account";
-            this.Load += new System.EventHandler(this.CreateAccount_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
