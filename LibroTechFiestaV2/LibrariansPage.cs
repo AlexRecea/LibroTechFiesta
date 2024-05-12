@@ -121,6 +121,11 @@ namespace LibroTechFiestaV2
             }
             connection.Close();
         }
+        public void AddNewBook_addNewBookButtonClicked(object sender, EventArgs e)
+        {
+            showAllBooks();
+        }
+
        private void backToMainPageButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -134,6 +139,7 @@ namespace LibroTechFiestaV2
         {
             AddNewBook addNewBook = new AddNewBook(); 
             addNewBook.Show();
+            addNewBook.ButtonClicked += AddNewBook_addNewBookButtonClicked;
         }
 
        

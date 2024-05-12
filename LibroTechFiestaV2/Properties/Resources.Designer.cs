@@ -73,26 +73,6 @@ namespace LibroTechFiestaV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background2 {
-            get {
-                object obj = ResourceManager.GetObject("background2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap background3 {
-            get {
-                object obj = ResourceManager.GetObject("background3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap backgroundAdd {
             get {
                 object obj = ResourceManager.GetObject("backgroundAdd", resourceCulture);
@@ -133,9 +113,9 @@ namespace LibroTechFiestaV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgroundReg {
+        internal static System.Drawing.Bitmap backgroundM {
             get {
-                object obj = ResourceManager.GetObject("backgroundReg", resourceCulture);
+                object obj = ResourceManager.GetObject("backgroundM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +123,9 @@ namespace LibroTechFiestaV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgroung {
+        internal static System.Drawing.Bitmap backgroundReg {
             get {
-                object obj = ResourceManager.GetObject("backgroung", resourceCulture);
+                object obj = ResourceManager.GetObject("backgroundReg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

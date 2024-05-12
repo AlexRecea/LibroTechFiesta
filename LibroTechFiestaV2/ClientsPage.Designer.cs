@@ -1,4 +1,6 @@
-﻿namespace LibroTechFiestaV2
+﻿using System.Windows.Forms;
+
+namespace LibroTechFiestaV2
 {
     partial class ClientsPage
     {
@@ -129,7 +131,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundClient;
+            this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundC;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1378, 855);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.showLoanedButton);

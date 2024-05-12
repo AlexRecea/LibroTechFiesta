@@ -13,14 +13,15 @@ namespace LibroTechFiestaV2
 {
     public partial class AddNewBook : Form
     {
-            public AddNewBook()
+        public event EventHandler ButtonClicked;
+        public AddNewBook()
         {
             InitializeComponent();
-            this.Resize += AddNewBook_Resize1;
+            this.Resize += AddNewBook_Resize;
             CenterObjects();
         }
 
-        private void AddNewBook_Resize1(object sender, EventArgs e)
+        private void AddNewBook_Resize(object sender, EventArgs e)
         {
             CenterObjects();
         }
@@ -38,11 +39,6 @@ namespace LibroTechFiestaV2
 
         }
 
-        private void AddNewBook_Resize(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void addNewBookButton_Click(object sender, EventArgs e)
         {
             string title = newBookTitle.Text.Trim();
@@ -53,6 +49,8 @@ namespace LibroTechFiestaV2
             int id = nrOfRows + 1;
 
             InsertOrUpdateBook(title, author, quantity,id);
+            this.Close();
+            
             
         }
 
@@ -112,6 +110,7 @@ namespace LibroTechFiestaV2
 
                         // Commit the transaction
                         transaction.Commit();
+                        ButtonClicked?.Invoke(this, EventArgs.Empty);
                     }
                     catch (Exception ex)
                     {
@@ -122,6 +121,7 @@ namespace LibroTechFiestaV2
                 }
             }
         }
+        
 
         private void newBookTitle_Enter(object sender, EventArgs e)
         {

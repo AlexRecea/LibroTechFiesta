@@ -19,16 +19,18 @@ namespace LibroTechFiestaV2
     {
         private void MainPage_Load(object sender, EventArgs e)
         {
-            int xPosition =  (Screen.PrimaryScreen.Bounds.Width - usernameText.Width) / 2 + 400;
+            int xPosition =  (Screen.PrimaryScreen.Bounds.Width - usernameText.Width) / 2 + 300;
             usernameText.Location = new System.Drawing.Point(xPosition, 200); 
             passwordText.Location = new System.Drawing.Point(xPosition, 250);
-            loginLibrariansButton.Location = new System.Drawing.Point(xPosition, 300);
+            int xPosition3=(Screen.PrimaryScreen.Bounds.Width - loginLibrariansButton.Width) / 2 + 300;
+            loginLibrariansButton.Location = new System.Drawing.Point(xPosition3, 300);
 
             int xPosition2 = (Screen.PrimaryScreen.Bounds.Width - passwordText.Width) / 2 - 200;
             usernameClientText.Location = new System.Drawing.Point(xPosition2, 200);
             passwordClientText.Location = new System.Drawing.Point(xPosition2, 250);
-            loginButton.Location = new System.Drawing.Point(xPosition2, 300);
-            registerButton.Location = new System.Drawing.Point(xPosition2, 350);
+            int xPosition4 = (Screen.PrimaryScreen.Bounds.Width - loginButton.Width) / 2 - 230;
+            loginButton.Location = new System.Drawing.Point(xPosition4, 300);
+            registerButton.Location = new System.Drawing.Point(xPosition4, 350);
         }
         
         //Recea
