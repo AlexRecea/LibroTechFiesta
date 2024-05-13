@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -49,6 +50,10 @@ namespace LibroTechFiestaV2
         private void createNewAccountButton_Click(object sender, EventArgs e)
         {
             string newEmail = newEmailText.Text.Trim();
+            string firstName = newFirstNameText.Text.Trim();
+            string lastName = newLastNameText.Text.Trim();
+            string phoneNumber = newPhoneNumberText.Text.Trim();
+            string password = newPasswordText.Text.Trim();
             MainPage mainPage = new MainPage();
             int clientsCount = mainPage.GetClientsCount();
             int nrOfClients = clientsCount + 1;
@@ -57,38 +62,55 @@ namespace LibroTechFiestaV2
             {
                 if (!CheckIfUserExists(newEmail))
                 {
-                    if (IsValidEmail(newEmail))
+                    if (firstName != "First Name" && lastName != "Last Name")
                     {
-                        string insertQuery = "INSERT INTO Clients (Id, FirstName, LastName, Email, PhoneNumber, Password) VALUES (@Id, @FirstName, @LastName, @Email, @PhoneNumber, @Password)";
-                        string firstName = newFirstNameText.Text.Trim();
-                        string lastName = newLastNameText.Text.Trim();
-                        string phoneNumber = newPhoneNumberText.Text.Trim();
-                        string password = newPasswordText.Text.Trim();
-
-
-                        using (var connection = new SqlConnection(conn))
+                        if (IsValidEmail(newEmail))
                         {
-                            connection.Open();
-                            using (var insertCommand = new SqlCommand(insertQuery, connection))
+                            if (phoneNumber != "Phone number" && IsValidPhoneNumber(phoneNumber)==true)
                             {
-                                insertCommand.Parameters.AddWithValue("@Id", nrOfClients);
-                                insertCommand.Parameters.AddWithValue("@FirstName", firstName);
-                                insertCommand.Parameters.AddWithValue("@LastName", lastName);
-                                insertCommand.Parameters.AddWithValue("@Email", newEmail);
-                                insertCommand.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
-                                insertCommand.Parameters.AddWithValue("@Password", password);
-                                insertCommand.ExecuteNonQuery();
-                                MessageBox.Show("Cont nou creat cu succes!");
-                                ClientsPage clientsPage = new ClientsPage();
-                                clientsPage.SetClientId(nrOfClients);
-                                clientsPage.Show();
-                                this.Close();
+                                if (password != "Password" && password.Length>5)
+                                {
+                                    string insertQuery = "INSERT INTO Clients (Id, FirstName, LastName, Email, PhoneNumber, Password) VALUES (@Id, @FirstName, @LastName, @Email, @PhoneNumber, @Password)";
+
+                                    using (var connection = new SqlConnection(conn))
+                                    {
+                                        connection.Open();
+                                        using (var insertCommand = new SqlCommand(insertQuery, connection))
+                                        {
+                                            insertCommand.Parameters.AddWithValue("@Id", nrOfClients);
+                                            insertCommand.Parameters.AddWithValue("@FirstName", firstName);
+                                            insertCommand.Parameters.AddWithValue("@LastName", lastName);
+                                            insertCommand.Parameters.AddWithValue("@Email", newEmail);
+                                            insertCommand.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+                                            insertCommand.Parameters.AddWithValue("@Password", password);
+                                            insertCommand.ExecuteNonQuery();
+                                            MessageBox.Show("Cont nou creat cu succes!");
+                                            ClientsPage clientsPage = new ClientsPage();
+                                            clientsPage.SetClientId(nrOfClients);
+                                            clientsPage.Show();
+                                            this.Close();
+                                        }
+                                        connection.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Seteaza o parola puternica!");
+                                }
                             }
-                            connection.Close();
+                            else
+                            {
+                                MessageBox.Show("Numarul de telefon nu este valid!");
+                            }
                         }
-                    }else
+                        else
+                        {
+                            MessageBox.Show("Email-ul nu este valid!");
+                        }
+                    }
+                    else
                     {
-                        MessageBox.Show("Email-ul nu este valid");
+                        MessageBox.Show("Introduceti nume si prenume!");
                     }
                 }
                 else
@@ -133,6 +155,18 @@ namespace LibroTechFiestaV2
                 return true;
             }
             catch (FormatException)
+            {
+                return false;
+            }
+        }
+        static bool IsValidPhoneNumber(string phoneNumber)
+        {
+            string formatTelefon = @"^\(?(\d{3})\)?[\s\-]?(\d{3})[\s\-]?(\d{4})$";
+            if (Regex.IsMatch(phoneNumber, formatTelefon))
+            {
+                return true;
+            }
+            else
             {
                 return false;
             }

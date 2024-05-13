@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LibroTechFiestaV2
 {
@@ -43,6 +44,7 @@ namespace LibroTechFiestaV2
             // bookListClients
             // 
             this.bookListClients.HideSelection = false;
+            this.bookListClients.FullRowSelect = true;
             this.bookListClients.Location = new System.Drawing.Point(20, 20);
             this.bookListClients.Margin = new System.Windows.Forms.Padding(4);
             this.bookListClients.Name = "bookListClients";
@@ -88,6 +90,7 @@ namespace LibroTechFiestaV2
             // booksOwned
             // 
             this.booksOwned.HideSelection = false;
+            this.booksOwned.FullRowSelect = true;
             this.booksOwned.Location = new System.Drawing.Point(59, 580);
             this.booksOwned.Margin = new System.Windows.Forms.Padding(4);
             this.booksOwned.Name = "booksOwned";
@@ -115,6 +118,7 @@ namespace LibroTechFiestaV2
             this.showLoanedButton.TabIndex = 8;
             this.showLoanedButton.Text = "Show Loaned Books";
             this.showLoanedButton.UseVisualStyleBackColor = true;
+            this.showLoanedButton.Click += new System.EventHandler(this.showLoanedButton_Click);
           
             // 
             // buttonBack

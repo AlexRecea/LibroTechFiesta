@@ -64,8 +64,8 @@ namespace LibroTechFiestaV2
                 int clientId = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
                 
                 Console.WriteLine("Id client de pe prima pagina este: " + clientId);
-                if (count == 1)
-                {
+               // if (count == 1)
+               // {
                     ClientsPage clientsPage = new ClientsPage();
                     clientsPage.SetClientId(clientId);
                     //MessageBox.Show("Succesfully Login!");
@@ -73,15 +73,15 @@ namespace LibroTechFiestaV2
                     //this.Close();
                     clientsPage.Show();
 
-                }
+               /* }
                 else
                 {
                     MessageBox.Show("Invalid Username and Password!");
-                }
+                }*/
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(" Email si parola gresite!");
             }
 
         }
