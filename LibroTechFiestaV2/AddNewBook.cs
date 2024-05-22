@@ -34,8 +34,10 @@ namespace LibroTechFiestaV2
             newBookAuthor.Location = new Point(xPosition2, 150);
             int xPosition3 = (this.Width - newBookQuantity.Width) / 2;
             newBookQuantity.Location = new Point(xPosition3, 200);
-            int xPosition4 = (this.Width - addNewBookButton.Width) / 2;
-            addNewBookButton.Location = new Point(xPosition4, 250);
+            int xPosition4 = (this.Width - newBookDetails.Width) / 2;
+            newBookDetails.Location = new Point(xPosition4, 250);
+            int xPosition5 = (this.Width - addNewBookButton.Width) / 2;
+            addNewBookButton.Location = new Point(xPosition5, 300);
 
         }
 
@@ -44,17 +46,18 @@ namespace LibroTechFiestaV2
             string title = newBookTitle.Text.Trim();
             string author = newBookAuthor.Text.Trim();
             int quantity = int.Parse(newBookQuantity.Text.Trim());
+            string details= newBookDetails.Text.Trim();
             MainPage mainPage = new MainPage();
             int nrOfRows = mainPage.GetRowCount();
             int id = nrOfRows + 1;
 
-            InsertOrUpdateBook(title, author, quantity,id);
+            InsertOrUpdateBook(title, author, quantity,id, details);
             this.Close();
             
             
         }
 
-        public void InsertOrUpdateBook(string title, string author, int quantity,int id)
+        public void InsertOrUpdateBook(string title, string author, int quantity,int id,string details)
         {
             //Recea
             //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
@@ -64,8 +67,9 @@ namespace LibroTechFiestaV2
 
            // Check if the book already exists in the database
            string selectQuery = "SELECT COUNT(*) FROM Books WHERE Title = @Title";
-            string updateQuery = "UPDATE Books SET Quantity = Quantity + @Quantity WHERE Title = @Title";
-            string insertQuery = "INSERT INTO Books (Id, Title, Author, Quantity) VALUES (@Id, @Title, @Author, @Quantity)";
+           string updateQuery = "UPDATE Books SET Quantity = Quantity + @Quantity WHERE Title = @Title";
+           string insertQuery = "INSERT INTO Books (Id, Title, Author, Quantity) VALUES (@IdBook, @Title, @Author, @Quantity)";
+            string insertQuery2 = "INSERT INTO BookDetails (Id, IdBook, preview) VALUES (@Id1, @IdBook, @Details)";
 
             using (var connection = new SqlConnection(conn))
             {
@@ -102,9 +106,16 @@ namespace LibroTechFiestaV2
                                 insertCommand.Parameters.AddWithValue("@Title", title);
                                 insertCommand.Parameters.AddWithValue("@Author", author);
                                 insertCommand.Parameters.AddWithValue("@Quantity", quantity);
-                                insertCommand.Parameters.AddWithValue("@Id", id);
+                                insertCommand.Parameters.AddWithValue("@IdBook", id);
                                 insertCommand.ExecuteNonQuery();
                                 MessageBox.Show("Carte adăugată cu succes!");
+                            }
+                            using (var insertCommand2 = new SqlCommand(insertQuery2, connection, transaction))
+                            {
+                                insertCommand2.Parameters.AddWithValue("@Details", details);
+                                insertCommand2.Parameters.AddWithValue("@IdBook", id);
+                                insertCommand2.Parameters.AddWithValue("@Id1", id);
+                                insertCommand2.ExecuteNonQuery();
                             }
                         }
 
@@ -176,6 +187,24 @@ namespace LibroTechFiestaV2
             {
                 newBookQuantity.Text = "Quantity";
                 newBookQuantity.ForeColor= Color.Silver;
+            }
+        }
+
+        private void newBookDetails_Enter(object sender, EventArgs e)
+        {
+            if (newBookQuantity.Text == "Details")
+            {
+                newBookQuantity.Text = "";
+                newBookQuantity.ForeColor = Color.Black;
+            }
+        }
+
+        private void newBookDetails_Leave(object sender, EventArgs e)
+        {
+            if (newBookQuantity.Text == "")
+            {
+                newBookQuantity.Text = "Details";
+                newBookQuantity.ForeColor = Color.Silver;
             }
         }
     }

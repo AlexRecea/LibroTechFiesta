@@ -35,6 +35,8 @@
             this.backToMainPageButton = new System.Windows.Forms.Button();
             this.booksView = new System.Windows.Forms.ListView();
             this.addNewBook = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.buttonShow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -48,7 +50,7 @@
             this.searchBox.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.searchBox.Location = new System.Drawing.Point(1112, 50);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(220, 30);
+            this.searchBox.Size = new System.Drawing.Size(220, 29);
             this.searchBox.TabIndex = 2;
             this.searchBox.Text = "Search";
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -68,9 +70,9 @@
             // backToMainPageButton
             // 
             this.backToMainPageButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.backToMainPageButton.Location = new System.Drawing.Point(900, 520);
+            this.backToMainPageButton.Location = new System.Drawing.Point(570, 500);
             this.backToMainPageButton.Name = "backToMainPageButton";
-            this.backToMainPageButton.Size = new System.Drawing.Size(151, 77);
+            this.backToMainPageButton.Size = new System.Drawing.Size(170, 80);
             this.backToMainPageButton.TabIndex = 4;
             this.backToMainPageButton.Text = "Back to Main Page";
             this.backToMainPageButton.UseVisualStyleBackColor = true;
@@ -78,6 +80,7 @@
             // 
             // booksView
             // 
+            this.booksView.FullRowSelect = true;
             this.booksView.HideSelection = false;
             this.booksView.Location = new System.Drawing.Point(20, 20);
             this.booksView.Name = "booksView";
@@ -87,13 +90,32 @@
             // 
             // addNewBook
             // 
-            this.addNewBook.Location = new System.Drawing.Point(390, 520);
+            this.addNewBook.Location = new System.Drawing.Point(150, 500);
             this.addNewBook.Name = "addNewBook";
-            this.addNewBook.Size = new System.Drawing.Size(173, 81);
+            this.addNewBook.Size = new System.Drawing.Size(170, 80);
             this.addNewBook.TabIndex = 6;
             this.addNewBook.Text = "Add New Book";
             this.addNewBook.UseVisualStyleBackColor = true;
             this.addNewBook.Click += new System.EventHandler(this.addNewBook_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(1000, 250);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(450, 350);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
+            // 
+            // buttonShow
+            // 
+            this.buttonShow.ForeColor = System.Drawing.Color.Black;
+            this.buttonShow.Location = new System.Drawing.Point(1185, 650);
+            this.buttonShow.Name = "buttonShow";
+            this.buttonShow.Size = new System.Drawing.Size(90, 60);
+            this.buttonShow.TabIndex = 8;
+            this.buttonShow.Text = "Show Details";
+            this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // LibrariansPage
             // 
@@ -102,6 +124,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundL;
             this.ClientSize = new System.Drawing.Size(1461, 697);
+            this.Controls.Add(this.buttonShow);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.addNewBook);
             this.Controls.Add(this.booksView);
             this.Controls.Add(this.backToMainPageButton);
@@ -126,5 +150,7 @@
         private System.Windows.Forms.Button backToMainPageButton;
         private System.Windows.Forms.ListView booksView;
         private System.Windows.Forms.Button addNewBook;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button buttonShow;
     }
 }

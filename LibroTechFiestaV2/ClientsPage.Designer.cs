@@ -39,12 +39,14 @@ namespace LibroTechFiestaV2
             this.returnButton = new System.Windows.Forms.Button();
             this.showLoanedButton = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.showDetailsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bookListClients
             // 
-            this.bookListClients.HideSelection = false;
             this.bookListClients.FullRowSelect = true;
+            this.bookListClients.HideSelection = false;
             this.bookListClients.Location = new System.Drawing.Point(20, 20);
             this.bookListClients.Margin = new System.Windows.Forms.Padding(4);
             this.bookListClients.Name = "bookListClients";
@@ -54,7 +56,8 @@ namespace LibroTechFiestaV2
             // 
             // loanButton
             // 
-            this.loanButton.Location = new System.Drawing.Point(1069, 351);
+            this.loanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loanButton.Location = new System.Drawing.Point(800, 600);
             this.loanButton.Margin = new System.Windows.Forms.Padding(4);
             this.loanButton.Name = "loanButton";
             this.loanButton.Size = new System.Drawing.Size(100, 50);
@@ -66,10 +69,10 @@ namespace LibroTechFiestaV2
             // searchBox
             // 
             this.searchBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.searchBox.Location = new System.Drawing.Point(1112, 50);
+            this.searchBox.Location = new System.Drawing.Point(1050, 50);
             this.searchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(220, 30);
+            this.searchBox.Size = new System.Drawing.Size(220, 22);
             this.searchBox.TabIndex = 2;
             this.searchBox.Text = "Search";
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -78,10 +81,11 @@ namespace LibroTechFiestaV2
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(1185, 100);
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Location = new System.Drawing.Point(1094, 100);
             this.searchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(90, 60);
+            this.searchButton.Size = new System.Drawing.Size(150, 70);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -89,18 +93,18 @@ namespace LibroTechFiestaV2
             // 
             // booksOwned
             // 
-            this.booksOwned.HideSelection = false;
             this.booksOwned.FullRowSelect = true;
-            this.booksOwned.Location = new System.Drawing.Point(59, 580);
+            this.booksOwned.HideSelection = false;
+            this.booksOwned.Location = new System.Drawing.Point(20, 600);
             this.booksOwned.Margin = new System.Windows.Forms.Padding(4);
             this.booksOwned.Name = "booksOwned";
-            this.booksOwned.Size = new System.Drawing.Size(699, 219);
+            this.booksOwned.Size = new System.Drawing.Size(700, 250);
             this.booksOwned.TabIndex = 6;
             this.booksOwned.UseCompatibleStateImageBehavior = false;
             // 
             // returnButton
             // 
-            this.returnButton.Location = new System.Drawing.Point(837, 704);
+            this.returnButton.Location = new System.Drawing.Point(800, 800);
             this.returnButton.Margin = new System.Windows.Forms.Padding(4);
             this.returnButton.Name = "returnButton";
             this.returnButton.Size = new System.Drawing.Size(168, 54);
@@ -111,7 +115,8 @@ namespace LibroTechFiestaV2
             // 
             // showLoanedButton
             // 
-            this.showLoanedButton.Location = new System.Drawing.Point(837, 580);
+            this.showLoanedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showLoanedButton.Location = new System.Drawing.Point(800, 700);
             this.showLoanedButton.Margin = new System.Windows.Forms.Padding(4);
             this.showLoanedButton.Name = "showLoanedButton";
             this.showLoanedButton.Size = new System.Drawing.Size(168, 47);
@@ -119,25 +124,46 @@ namespace LibroTechFiestaV2
             this.showLoanedButton.Text = "Show Loaned Books";
             this.showLoanedButton.UseVisualStyleBackColor = true;
             this.showLoanedButton.Click += new System.EventHandler(this.showLoanedButton_Click);
-          
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(1205, 723);
+            this.buttonBack.Location = new System.Drawing.Point(1689, 767);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(139, 76);
             this.buttonBack.TabIndex = 10;
             this.buttonBack.Text = "Back to Main Page";
             this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.buttonBack.Click += new System.EventHandler(this.showDetailsButton_Click_1);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(1400, 100);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(600, 500);
+            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.Text = "";
+            // 
+            // showDetailsButton
+            // 
+            this.showDetailsButton.Location = new System.Drawing.Point(1094, 319);
+            this.showDetailsButton.Name = "showDetailsButton";
+            this.showDetailsButton.Size = new System.Drawing.Size(150, 70);
+            this.showDetailsButton.TabIndex = 12;
+            this.showDetailsButton.Text = "Show Details";
+            this.showDetailsButton.UseVisualStyleBackColor = true;
+            this.showDetailsButton.Click += new System.EventHandler(this.showDetailsButton_Click_1);
             // 
             // ClientsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundC;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1378, 855);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1853, 855);
+            this.Controls.Add(this.showDetailsButton);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.showLoanedButton);
             this.Controls.Add(this.returnButton);
@@ -167,5 +193,7 @@ namespace LibroTechFiestaV2
         private System.Windows.Forms.Button returnButton;
         private System.Windows.Forms.Button showLoanedButton;
         private System.Windows.Forms.Button buttonBack;
+        private RichTextBox richTextBox1;
+        private System.Windows.Forms.Button showDetailsButton;
     }
 }

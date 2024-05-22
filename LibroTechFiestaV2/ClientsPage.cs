@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -23,15 +24,16 @@ namespace LibroTechFiestaV2
         DataSet dsClients;
         DataSet dsBooks;
         DataSet dsOwnedBooks;
+        DataSet dsBookDetails;
         public ClientsPage()
         {
             InitializeComponent();
             bookListClients.Items.Clear();
             bookListClients.View = View.Details;
-            bookListClients.Columns.Add("Id", 60);
+            //bookListClients.Columns.Add("Id", 50);
             bookListClients.Columns.Add("Titlul", 280);
             bookListClients.Columns.Add("Autorul", 280);
-            bookListClients.Columns.Add("Stoc", 280);
+            bookListClients.Columns.Add("Stoc", 60);
             showAllBooks();
             booksOwned.Items.Clear();
             booksOwned.View = View.Details;
@@ -39,6 +41,7 @@ namespace LibroTechFiestaV2
             booksOwned.Columns.Add("Titlul", 200);
             booksOwned.Columns.Add("Autorul", 200);
             showLoanedBooks();
+            //showDetails(richTextBox1, 2);
             
            
         }
@@ -52,11 +55,6 @@ namespace LibroTechFiestaV2
         {
             bookListClients.Items.Clear();
 
-            // Ajustarea coloanelor pentru a se potrivi conținutului
-            //foreach (ColumnHeader column in booksView.Columns)
-            //{
-            //    column.Width = -2;
-            //}
 
             SqlConnection connection = new SqlConnection(conn);
             dsBooks = new DataSet();
@@ -72,8 +70,8 @@ namespace LibroTechFiestaV2
                 //booksList.Items.Add(name);
                 //Un item este o linie si SubItem e o coloana de pe linie
                 //Daca pui multe items se face automat viewBox-ul cu scroll
-                ListViewItem listViewItem = new ListViewItem(id);
-                listViewItem.SubItems.Add(name);
+                ListViewItem listViewItem = new ListViewItem(name);
+                //listViewItem.SubItems.Add(name);
                 listViewItem.SubItems.Add(author);
                 listViewItem.SubItems.Add(quantity);
                 listViewItem.Tag = id;
@@ -122,6 +120,45 @@ namespace LibroTechFiestaV2
             {
                 connection.Close();
             }
+        }
+        public void showDetails(RichTextBox richTextBox,int id)
+        {
+         
+            dsBookDetails = new DataSet();
+            string query = "SELECT preview FROM BookDetails WHERE IdBook=@Id";
+            richTextBox.Clear();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(conn))
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID", id);
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read()) // Citește doar prima înregistrare găsită
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                richTextBox.AppendText( reader[i].ToString() + Environment.NewLine);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nu a fost găsită nicio înregistrare cu ID-ul specificat.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A apărut o eroare: " + ex.Message);
+            }
+
+
+
+
         }
         private void backToMainPageButton_Click(object sender, EventArgs e)
         {
@@ -360,6 +397,39 @@ namespace LibroTechFiestaV2
                 this.Close();
                 MainPage mainPage = new MainPage();
                 mainPage.Show();
+        }/*
+        private void showDetailsButton_Click(object sender, EventArgs e)
+        {
+            
+            if (bookListClients.SelectedItems.Count > 0)
+            {
+                int id = Convert.ToInt32(bookListClients.SelectedItems[0].Tag);
+                showDetails(richTextBox1, id);
+            }
+            else {
+                MessageBox.Show("Nu se selecteaza");
+                    }
+        }*/
+      
+
+        private void showDetailsButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (bookListClients.SelectedItems.Count > 0)
+                {
+                    int id = Convert.ToInt32(bookListClients.SelectedItems[0].Tag);
+                    showDetails(richTextBox1, id);
+                }
+                else
+                {
+                    MessageBox.Show("Selectați o carte din listă.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A apărut o eroare: " + ex.Message);
+            }
         }
     }
 }

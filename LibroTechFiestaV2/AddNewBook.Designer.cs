@@ -34,6 +34,7 @@ namespace LibroTechFiestaV2
             this.newBookAuthor = new System.Windows.Forms.TextBox();
             this.newBookQuantity = new System.Windows.Forms.TextBox();
             this.addNewBookButton = new System.Windows.Forms.Button();
+            this.newBookDetails = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // newBookTitle
@@ -77,7 +78,7 @@ namespace LibroTechFiestaV2
             // 
             // addNewBookButton
             // 
-            this.addNewBookButton.Location = new System.Drawing.Point(402, 350);
+            this.addNewBookButton.Location = new System.Drawing.Point(407, 434);
             this.addNewBookButton.Margin = new System.Windows.Forms.Padding(4);
             this.addNewBookButton.Name = "addNewBookButton";
             this.addNewBookButton.Size = new System.Drawing.Size(79, 28);
@@ -86,6 +87,18 @@ namespace LibroTechFiestaV2
             this.addNewBookButton.UseVisualStyleBackColor = true;
             this.addNewBookButton.Click += new System.EventHandler(this.addNewBookButton_Click);
             // 
+            // newBookDetails
+            // 
+            this.newBookDetails.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.newBookDetails.Location = new System.Drawing.Point(326, 336);
+            this.newBookDetails.Name = "newBookDetails";
+            this.newBookDetails.Size = new System.Drawing.Size(236, 22);
+            this.newBookDetails.TabIndex = 4;
+            this.newBookDetails.Text = "Details";
+            this.newBookDetails.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.newBookDetails.Enter += new System.EventHandler(this.newBookDetails_Enter);
+            this.newBookDetails.Leave += new System.EventHandler(this.newBookDetails_Leave);
+            // 
             // AddNewBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -93,6 +106,7 @@ namespace LibroTechFiestaV2
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundAdd;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(888, 543);
+            this.Controls.Add(this.newBookDetails);
             this.Controls.Add(this.addNewBookButton);
             this.Controls.Add(this.newBookQuantity);
             this.Controls.Add(this.newBookAuthor);
@@ -111,5 +125,6 @@ namespace LibroTechFiestaV2
         private System.Windows.Forms.TextBox newBookAuthor;
         private System.Windows.Forms.TextBox newBookQuantity;
         private System.Windows.Forms.Button addNewBookButton;
+        private TextBox newBookDetails;
     }
 }
