@@ -20,6 +20,11 @@ namespace LibroTechFiestaV2
             this.Resize += AddNewBook_Resize;
             CenterObjects();
         }
+        //Recea
+        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+
+        //Elena
+        //string conn =@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
 
         private void AddNewBook_Resize(object sender, EventArgs e)
         {
@@ -51,25 +56,21 @@ namespace LibroTechFiestaV2
             int nrOfRows = mainPage.GetRowCount();
             int id = nrOfRows + 1;
 
-            InsertOrUpdateBook(title, author, quantity,id, details);
+            InsertOrUpdateBook(title, author, quantity, id, details);
             this.Close();
             
             
         }
 
-        public void InsertOrUpdateBook(string title, string author, int quantity,int id,string details)
+        public void InsertOrUpdateBook(string title, string author, int quantity, int id, string details)
         {
-            //Recea
-            //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
-
-            //Elena
-            string conn =@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
-
+            
            // Check if the book already exists in the database
            string selectQuery = "SELECT COUNT(*) FROM Books WHERE Title = @Title";
            string updateQuery = "UPDATE Books SET Quantity = Quantity + @Quantity WHERE Title = @Title";
            string insertQuery = "INSERT INTO Books (Id, Title, Author, Quantity) VALUES (@IdBook, @Title, @Author, @Quantity)";
-            string insertQuery2 = "INSERT INTO BookDetails (Id, IdBook, preview) VALUES (@Id1, @IdBook, @Details)";
+           string insertQueryDetails = "INSERT INTO BookDetails (Id, IdBook, preview) VALUES (@Id1, @IdBook, @Details)";
+           string updateQueryDetails = "UPDATE BookDetails INNER JOIN Books ON BookDetails.IdBook = Books.Id SET BookDetails.preview = @preview WHERE Books.title = @Title;";
 
             using (var connection = new SqlConnection(conn))
             {
@@ -89,14 +90,30 @@ namespace LibroTechFiestaV2
 
                         if (existingCount > 0)
                         {
-                            // If the book already exists, update the quantity
+                            int nrOfBooks = GetNrOfBooks(title);
+                            if (nrOfBooks + quantity >= 0)
+                            {
+                               // If the book already exists, update the quantity
                             using (var updateCommand = new SqlCommand(updateQuery, connection, transaction))
                             {
                                 updateCommand.Parameters.AddWithValue("@Title", title);
                                 updateCommand.Parameters.AddWithValue("@Quantity", quantity);
                                 updateCommand.ExecuteNonQuery();
-                                MessageBox.Show("Cartea deja exista, am modificat cantitatea!");
+                                MessageBox.Show("Cartea deja exista, am dat update!");
                             }
+                            using (var updateCommand2 = new SqlCommand(updateQueryDetails, connection, transaction))
+                            {
+                                updateCommand2.Parameters.AddWithValue("@preview", details);
+                                updateCommand2.Parameters.AddWithValue("@Title", title);
+                                updateCommand2.ExecuteNonQuery();
+                            }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nu poti elimina acest numar de carti!");
+                            }
+                            
+
                         }
                         else
                         {
@@ -110,7 +127,7 @@ namespace LibroTechFiestaV2
                                 insertCommand.ExecuteNonQuery();
                                 MessageBox.Show("Carte adăugată cu succes!");
                             }
-                            using (var insertCommand2 = new SqlCommand(insertQuery2, connection, transaction))
+                            using (var insertCommand2 = new SqlCommand(insertQueryDetails, connection, transaction))
                             {
                                 insertCommand2.Parameters.AddWithValue("@Details", details);
                                 insertCommand2.Parameters.AddWithValue("@IdBook", id);
@@ -132,8 +149,35 @@ namespace LibroTechFiestaV2
                 }
             }
         }
-        
 
+        public int GetNrOfBooks(string title)
+        {
+            int nrOfBooks = 0;
+
+            // SQL query to count the number of rows in the table
+            string query = $"SELECT quantity FROM Books WHERE title = @title";
+
+            using (var connection = new SqlConnection(conn))
+            {
+                using (var command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@title", title);
+                        connection.Open();
+                        // Execute the query and get the result
+                        nrOfBooks = Convert.ToInt32(command.ExecuteScalar());
+                        connection.Close();
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+
+            return nrOfBooks;
+        }
         private void newBookTitle_Enter(object sender, EventArgs e)
         {
             if (newBookTitle.Text == "Title")
@@ -192,20 +236,22 @@ namespace LibroTechFiestaV2
 
         private void newBookDetails_Enter(object sender, EventArgs e)
         {
-            if (newBookQuantity.Text == "Details")
+            if (newBookDetails.Text == "Details")
             {
-                newBookQuantity.Text = "";
-                newBookQuantity.ForeColor = Color.Black;
+                newBookDetails.Text = "";
+                newBookDetails.ForeColor = Color.Black;
             }
         }
 
         private void newBookDetails_Leave(object sender, EventArgs e)
         {
-            if (newBookQuantity.Text == "")
+            if (newBookDetails.Text == "")
             {
-                newBookQuantity.Text = "Details";
-                newBookQuantity.ForeColor = Color.Silver;
+                newBookDetails.Text = "Details";
+                newBookDetails.ForeColor = Color.Silver;
             }
         }
+
+        
     }
 }

@@ -43,10 +43,10 @@ namespace LibroTechFiestaV2
             createNewAccountButton.Location = new Point(xPosition2, yPosition + 5 * dis);
         }
         //Recea
-        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
 
         //Elena
-        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         private void createNewAccountButton_Click(object sender, EventArgs e)
         {
             string newEmail = newEmailText.Text.Trim();
@@ -68,7 +68,7 @@ namespace LibroTechFiestaV2
                         {
                             if (phoneNumber != "Phone number" && IsValidPhoneNumber(phoneNumber)==true)
                             {
-                                if (password != "Password" && password.Length>5)
+                                if (password != "Password" && password.Length > 5)
                                 {
                                     string insertQuery = "INSERT INTO Clients (Id, FirstName, LastName, Email, PhoneNumber, Password) VALUES (@Id, @FirstName, @LastName, @Email, @PhoneNumber, @Password)";
 

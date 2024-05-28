@@ -34,10 +34,10 @@ namespace LibroTechFiestaV2
         }
         
         //Recea
-        //string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True");
+        string conn = ("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Project_II\\LibroTechFiestaV2\\Database1.mdf;Integrated Security=True;Connect Timeout=30");
 
         //Elena
-        string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
+        //string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\Database1.mdf;Integrated Security=True;Connect Timeout=30";
         public MainPage()
         {
             InitializeComponent();
@@ -61,12 +61,14 @@ namespace LibroTechFiestaV2
                 connection.Close();
 
                 int count = ds.Tables[0].Rows.Count;
-                int clientId = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
                 
-                Console.WriteLine("Id client de pe prima pagina este: " + clientId);
+                
+                
                 if (count == 1)
                 {
                     ClientsPage clientsPage = new ClientsPage();
+                    int clientId = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
+                    Console.WriteLine("Id client de pe prima pagina este: " + clientId);
                     clientsPage.SetClientId(clientId);
                     //MessageBox.Show("Succesfully Login!");
                     this.Hide();

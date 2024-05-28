@@ -50,7 +50,7 @@
             this.searchBox.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.searchBox.Location = new System.Drawing.Point(1112, 50);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(220, 29);
+            this.searchBox.Size = new System.Drawing.Size(220, 25);
             this.searchBox.TabIndex = 2;
             this.searchBox.Text = "Search";
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -94,7 +94,7 @@
             this.addNewBook.Name = "addNewBook";
             this.addNewBook.Size = new System.Drawing.Size(170, 80);
             this.addNewBook.TabIndex = 6;
-            this.addNewBook.Text = "Add New Book";
+            this.addNewBook.Text = "Update Books";
             this.addNewBook.UseVisualStyleBackColor = true;
             this.addNewBook.Click += new System.EventHandler(this.addNewBook_Click);
             // 
@@ -119,7 +119,7 @@
             // 
             // LibrariansPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundL;
