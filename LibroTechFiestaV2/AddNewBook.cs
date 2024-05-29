@@ -50,13 +50,22 @@ namespace LibroTechFiestaV2
         {
             string title = newBookTitle.Text.Trim();
             string author = newBookAuthor.Text.Trim();
-            int quantity = int.Parse(newBookQuantity.Text.Trim());
+            string quantity = newBookQuantity.Text.Trim();
             string details= newBookDetails.Text.Trim();
             MainPage mainPage = new MainPage();
             int nrOfRows = mainPage.GetRowCount();
             int id = nrOfRows + 1;
-
-            InsertOrUpdateBook(title, author, quantity, id, details);
+            int quantityNumber;
+            bool isSuccesful = int.TryParse(quantity, out quantityNumber);
+            if (isSuccesful)
+            {
+                InsertOrUpdateBook(title, author, quantityNumber, id, details);
+            }
+            else
+            {
+                MessageBox.Show("Nu ai introdus o cantitate validă");
+            }
+            
             this.Close();
             
             
@@ -70,7 +79,7 @@ namespace LibroTechFiestaV2
            string updateQuery = "UPDATE Books SET Quantity = Quantity + @Quantity WHERE Title = @Title";
            string insertQuery = "INSERT INTO Books (Id, Title, Author, Quantity) VALUES (@IdBook, @Title, @Author, @Quantity)";
            string insertQueryDetails = "INSERT INTO BookDetails (Id, IdBook, preview) VALUES (@Id1, @IdBook, @Details)";
-           string updateQueryDetails = "UPDATE BookDetails INNER JOIN Books ON BookDetails.IdBook = Books.Id SET BookDetails.preview = @preview WHERE Books.title = @Title;";
+           string updateQueryDetails = "UPDATE BookDetails SET BookDetails.preview = @preview FROM BookDetails INNER JOIN Books ON BookDetails.IdBook = Books.Id WHERE Books.title = @Title;";
 
             using (var connection = new SqlConnection(conn))
             {
@@ -88,7 +97,7 @@ namespace LibroTechFiestaV2
                             existingCount = Convert.ToInt32(selectCommand.ExecuteScalar());
                         }
 
-                        if (existingCount > 0)
+                        if (existingCount > 0) //exista cartea
                         {
                             int nrOfBooks = GetNrOfBooks(title);
                             if (nrOfBooks + quantity >= 0)
@@ -101,12 +110,16 @@ namespace LibroTechFiestaV2
                                 updateCommand.ExecuteNonQuery();
                                 MessageBox.Show("Cartea deja exista, am dat update!");
                             }
-                            using (var updateCommand2 = new SqlCommand(updateQueryDetails, connection, transaction))
-                            {
+                            if (details != "Details" && !string.IsNullOrEmpty(details))
+                                {
+                                using (var updateCommand2 = new SqlCommand(updateQueryDetails, connection, transaction))
+                                {
                                 updateCommand2.Parameters.AddWithValue("@preview", details);
                                 updateCommand2.Parameters.AddWithValue("@Title", title);
                                 updateCommand2.ExecuteNonQuery();
-                            }
+                                }
+                                }
+                            
                             }
                             else
                             {
@@ -115,24 +128,53 @@ namespace LibroTechFiestaV2
                             
 
                         }
-                        else
+                        else //nu exista cartea introdusa
                         {
-                            // If the book doesn't exist, insert it
-                            using (var insertCommand = new SqlCommand(insertQuery, connection, transaction))
+                            if (title != "Title" && !string.IsNullOrEmpty(title))
                             {
-                                insertCommand.Parameters.AddWithValue("@Title", title);
-                                insertCommand.Parameters.AddWithValue("@Author", author);
-                                insertCommand.Parameters.AddWithValue("@Quantity", quantity);
-                                insertCommand.Parameters.AddWithValue("@IdBook", id);
-                                insertCommand.ExecuteNonQuery();
-                                MessageBox.Show("Carte adăugată cu succes!");
+                                if (author != "Author" && !string.IsNullOrEmpty(author))
+                                {
+                                    // If the book doesn't exist, insert it
+                                    using (var insertCommand = new SqlCommand(insertQuery, connection, transaction))
+                                    {
+                                        insertCommand.Parameters.AddWithValue("@Title", title);
+                                        insertCommand.Parameters.AddWithValue("@Author", author);
+                                        insertCommand.Parameters.AddWithValue("@Quantity", quantity);
+                                        insertCommand.Parameters.AddWithValue("@IdBook", id);
+                                        insertCommand.ExecuteNonQuery();
+                                        MessageBox.Show("Carte adăugată cu succes!");
+                                    }
+                                    if (details != "Details")
+                                    {
+                                        using (var insertCommand2 = new SqlCommand(insertQueryDetails, connection, transaction))
+                                        {
+                                            insertCommand2.Parameters.AddWithValue("@Details", details);
+                                            insertCommand2.Parameters.AddWithValue("@IdBook", id);
+                                            insertCommand2.Parameters.AddWithValue("@Id1", id);
+                                            insertCommand2.ExecuteNonQuery();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        details = "Nu există detalii.";
+                                        using (var insertCommand2 = new SqlCommand(insertQueryDetails, connection, transaction))
+                                        {
+                                            insertCommand2.Parameters.AddWithValue("@Details", details);
+                                            insertCommand2.Parameters.AddWithValue("@IdBook", id);
+                                            insertCommand2.Parameters.AddWithValue("@Id1", id);
+                                            insertCommand2.ExecuteNonQuery();
+                                        }
+                                        
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Nu ai introdus niciun autor!");
+                                }
                             }
-                            using (var insertCommand2 = new SqlCommand(insertQueryDetails, connection, transaction))
+                            else
                             {
-                                insertCommand2.Parameters.AddWithValue("@Details", details);
-                                insertCommand2.Parameters.AddWithValue("@IdBook", id);
-                                insertCommand2.Parameters.AddWithValue("@Id1", id);
-                                insertCommand2.ExecuteNonQuery();
+                                MessageBox.Show("Nu ai introdus niciun titlu!");
                             }
                         }
 

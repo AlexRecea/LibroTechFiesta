@@ -50,7 +50,7 @@ namespace LibroTechFiestaV2
             try
             {
                 SqlConnection connection = new SqlConnection(conn);
-                SqlCommand cmd = new SqlCommand(" select Id from Clients where email=@email COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
+                SqlCommand cmd = new SqlCommand("select Id from Clients where email=@email COLLATE SQL_Latin1_General_CP1_CS_AS and password=@pass COLLATE SQL_Latin1_General_CP1_CS_AS", connection);
                 cmd.Parameters.AddWithValue("@email", usernameClientText.Text.Trim());
                 cmd.Parameters.AddWithValue("@pass", passwordClientText.Text.Trim());
 
