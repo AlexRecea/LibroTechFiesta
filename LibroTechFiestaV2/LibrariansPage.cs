@@ -201,5 +201,7 @@ namespace LibroTechFiestaV2
                 MessageBox.Show("A apărut o eroare: " + ex.Message);
             }
         }
+
+       
     }
 }

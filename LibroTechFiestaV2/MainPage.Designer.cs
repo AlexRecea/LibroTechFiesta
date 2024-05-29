@@ -76,7 +76,7 @@ namespace LibroTechFiestaV2
             this.passwordText.Margin = new System.Windows.Forms.Padding(4);
             this.passwordText.MaxLength = 40;
             this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(200, 29);
+            this.passwordText.Size = new System.Drawing.Size(200, 25);
             this.passwordText.TabIndex = 4;
             this.passwordText.Text = "password";
             this.passwordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -108,7 +108,7 @@ namespace LibroTechFiestaV2
             this.usernameClientText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.usernameClientText.Location = new System.Drawing.Point(130, 112);
             this.usernameClientText.Name = "usernameClientText";
-            this.usernameClientText.Size = new System.Drawing.Size(147, 29);
+            this.usernameClientText.Size = new System.Drawing.Size(147, 25);
             this.usernameClientText.TabIndex = 8;
             this.usernameClientText.Text = "email";
             this.usernameClientText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -120,7 +120,7 @@ namespace LibroTechFiestaV2
             this.passwordClientText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.passwordClientText.Location = new System.Drawing.Point(130, 200);
             this.passwordClientText.Name = "passwordClientText";
-            this.passwordClientText.Size = new System.Drawing.Size(147, 29);
+            this.passwordClientText.Size = new System.Drawing.Size(147, 25);
             this.passwordClientText.TabIndex = 9;
             this.passwordClientText.Text = "password";
             this.passwordClientText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -129,11 +129,11 @@ namespace LibroTechFiestaV2
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::LibroTechFiestaV2.Properties.Resources.backgroundM;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1087, 504);
             this.Controls.Add(this.passwordClientText);
             this.Controls.Add(this.usernameClientText);

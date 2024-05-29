@@ -78,7 +78,7 @@ namespace LibroTechFiestaV2
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username and Password!");
+                    MessageBox.Show("Utilizator sau parolă incorecte!");
                 }
             }
             catch (Exception ex)

@@ -133,7 +133,7 @@ namespace LibroTechFiestaV2
             this.buttonBack.TabIndex = 10;
             this.buttonBack.Text = "Back to Main Page";
             this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.showDetailsButton_Click_1);
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // richTextBox1
             // 

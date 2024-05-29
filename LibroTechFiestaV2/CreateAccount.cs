@@ -62,13 +62,13 @@ namespace LibroTechFiestaV2
             {
                 if (!CheckIfUserExists(newEmail))
                 {
-                    if (firstName != "First Name" && lastName != "Last Name")
+                    if (IsValidFirstName(firstName) && IsValidLastName(lastName))
                     {
-                        if (IsValidEmail(newEmail))
+                        if (IsValidEmail(newEmail) && !string.IsNullOrEmpty(newEmail))
                         {
-                            if (phoneNumber != "Phone number" && IsValidPhoneNumber(phoneNumber)==true)
+                            if (phoneNumber != "Phone number" && IsValidPhoneNumber(phoneNumber)==true && !string.IsNullOrEmpty(phoneNumber))
                             {
-                                if (password != "Password" && password.Length > 5)
+                                if (password != "Password" && password.Length > 5 && !string.IsNullOrEmpty(password))
                                 {
                                     string insertQuery = "INSERT INTO Clients (Id, FirstName, LastName, Email, PhoneNumber, Password) VALUES (@Id, @FirstName, @LastName, @Email, @PhoneNumber, @Password)";
 
@@ -95,12 +95,12 @@ namespace LibroTechFiestaV2
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Seteaza o parola puternica!");
+                                    MessageBox.Show("Setează o parolă puternică!");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Numarul de telefon nu este valid!");
+                                MessageBox.Show("Numărul de telefon nu este valid!");
                             }
                         }
                         else
@@ -108,10 +108,7 @@ namespace LibroTechFiestaV2
                             MessageBox.Show("Email-ul nu este valid!");
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Introduceti nume si prenume!");
-                    }
+                   
                 }
                 else
                 {
@@ -260,6 +257,56 @@ namespace LibroTechFiestaV2
                 newPasswordText.Text = "Password";
                 newPasswordText.ForeColor = Color.Silver;
             }
+        }
+        public bool IsValidFirstName(string firstName)
+        {
+            // Verifică dacă titlul este null sau gol
+            if (string.IsNullOrWhiteSpace(firstName) && firstName == "First Name")
+            {
+                MessageBox.Show("Prenumele nu poate fi gol.");
+                return false;
+            }
+
+            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
+            if (firstName.Length < 1 || firstName.Length > 39)
+            {
+                MessageBox.Show("Prenume trebuie să fie între 1 și 40 de caractere.");
+                return false;
+            }
+
+            // Verifică dacă titlul conține caractere nepermise (de exemplu, doar litere, cifre și spații)
+            if (!Regex.IsMatch(firstName, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("Prenumele conține caractere nepermise.");
+                return false;
+            }
+
+            return true;
+        }
+        public bool IsValidLastName(string lastName)
+        {
+            // Verifică dacă titlul este null sau gol
+            if (string.IsNullOrWhiteSpace(lastName) && lastName == "Last Name")
+            {
+                MessageBox.Show("Numele nu poate fi gol.");
+                return false;
+            }
+
+            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
+            if (lastName.Length < 1 || lastName.Length > 39)
+            {
+                MessageBox.Show("Nume trebuie să fie între 1 și 40 de caractere.");
+                return false;
+            }
+
+            // Verifică dacă titlul conține caractere nepermise (de exemplu, doar litere, cifre și spații)
+            if (!Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("Numele conține caractere nepermise.");
+                return false;
+            }
+
+            return true;
         }
     }
 }

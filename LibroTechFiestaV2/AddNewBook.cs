@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -91,11 +92,14 @@ namespace LibroTechFiestaV2
                     try
                     {
                         int existingCount;
+                        
                         using (var selectCommand = new SqlCommand(selectQuery, connection, transaction))
                         {
                             selectCommand.Parameters.AddWithValue("@Title", title);
                             existingCount = Convert.ToInt32(selectCommand.ExecuteScalar());
                         }
+                        
+                        
 
                         if (existingCount > 0) //exista cartea
                         {
@@ -130,9 +134,9 @@ namespace LibroTechFiestaV2
                         }
                         else //nu exista cartea introdusa
                         {
-                            if (title != "Title" && !string.IsNullOrEmpty(title))
+                            if (IsValidTitle(title))
                             {
-                                if (author != "Author" && !string.IsNullOrEmpty(author))
+                                if (IsValidAuthor(author))
                                 {
                                     // If the book doesn't exist, insert it
                                     using (var insertCommand = new SqlCommand(insertQuery, connection, transaction))
@@ -167,15 +171,9 @@ namespace LibroTechFiestaV2
                                         
                                     }
                                 }
-                                else
-                                {
-                                    MessageBox.Show("Nu ai introdus niciun autor!");
-                                }
+                               
                             }
-                            else
-                            {
-                                MessageBox.Show("Nu ai introdus niciun titlu!");
-                            }
+                           
                         }
 
                         // Commit the transaction
@@ -294,6 +292,55 @@ namespace LibroTechFiestaV2
             }
         }
 
-        
+        public bool IsValidTitle(string title)
+        {
+            // Verifică dacă titlul este null sau gol
+            if (string.IsNullOrWhiteSpace(title) && title == "Title")
+            {
+                MessageBox.Show("Titlul nu poate fi gol.");
+                return false;
+            }
+
+            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
+            if (title.Length < 1 || title.Length > 49)
+            {
+                MessageBox.Show("Titlul trebuie să fie între 1 și 100 de caractere.");
+                return false;
+            }
+
+            // Verifică dacă titlul conține caractere nepermise (de exemplu, doar litere, cifre și spații)
+            if (!Regex.IsMatch(title, @"^[a-zA-Z0-9\s]+$"))
+            {
+                MessageBox.Show("Titlul conține caractere nepermise.");
+                return false;
+            }
+
+            return true;
+        }
+        public bool IsValidAuthor(string author)
+        {
+            // Verifică dacă titlul este null sau gol
+            if (string.IsNullOrWhiteSpace(author) && author == "Author")
+            {
+                MessageBox.Show("Autorul nu poate fi gol.");
+                return false;
+            }
+
+            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
+            if (author.Length < 1 || author.Length > 39)
+            {
+                MessageBox.Show("Autorul trebuie să fie între 1 și 40 de caractere.");
+                return false;
+            }
+
+            // Verifică dacă titlul conține caractere nepermise (de exemplu, doar litere, cifre și spații)
+            if (!Regex.IsMatch(author, @"^[a-zA-Z\s]+$"))
+            {
+                MessageBox.Show("Autorul conține caractere nepermise.");
+                return false;
+            }
+
+            return true;
+        }
     }
 }

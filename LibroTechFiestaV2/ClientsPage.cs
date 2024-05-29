@@ -64,14 +64,14 @@ namespace LibroTechFiestaV2
             foreach (DataRow dr in dsBooks.Tables["Books"].Rows)
             {
                 String id = dr.ItemArray.GetValue(0).ToString();
-                String name = dr.ItemArray.GetValue(1).ToString();
+                String title = dr.ItemArray.GetValue(1).ToString();
                 String author = dr.ItemArray.GetValue(2).ToString();
                 String quantity = dr.ItemArray.GetValue(3).ToString();
                 //booksList.Items.Add(name);
                 //Un item este o linie si SubItem e o coloana de pe linie
                 //Daca pui multe items se face automat viewBox-ul cu scroll
-                ListViewItem listViewItem = new ListViewItem(name);
-                //listViewItem.SubItems.Add(name);
+                ListViewItem listViewItem = new ListViewItem(title);
+                //listViewItem.SubItems.Add(title);
                 listViewItem.SubItems.Add(author);
                 listViewItem.SubItems.Add(quantity);
                 listViewItem.Tag = id;
@@ -225,7 +225,7 @@ namespace LibroTechFiestaV2
                 
                 // Obținem ID-ul cărții selectate și numărul curent de cărți disponibile
                // string bookName =bookListClients.SelectedItems[0].SubItems[1].Text;
-                int bookId = Convert.ToInt32(bookListClients.SelectedItems[0].SubItems[0].Text); // Presupunând că ID-ul cărții este stocat în proprietatea Tag a elementului ListView
+                int bookId = Convert.ToInt32(bookListClients.SelectedItems[0].Tag); // Presupunând că ID-ul cărții este stocat în proprietatea Tag a elementului ListView
                 Console.WriteLine("indexul cartii: " + bookId);
                 if (!VerifyLoans(bookId, clientId))
                 {
@@ -333,29 +333,32 @@ namespace LibroTechFiestaV2
 
         private void returnButton_Click(object sender, EventArgs e)
         {
-            int ownedBookId = Convert.ToInt32(booksOwned.SelectedItems[0].Tag);
-            using (SqlConnection connection = new SqlConnection(conn))
+            
+            if (booksOwned.SelectedItems.Count > 0)
             {
-                // Deschiderea conexiunii
-                connection.Open();
-
-                // Tranzacție pentru a asigura consistența datelor
-                SqlTransaction transaction = connection.BeginTransaction();
-
-                try
+                int ownedBookId = Convert.ToInt32(booksOwned.SelectedItems[0].Tag);
+                using (SqlConnection connection = new SqlConnection(conn))
                 {
-                    // Comanda SQL pentru a actualiza atributul returned în tabela Loans
-                    string updateLoanQuery = @"UPDATE Loans SET returned = 1 
+                    // Deschiderea conexiunii
+                    connection.Open();
+
+                    // Tranzacție pentru a asigura consistența datelor
+                    SqlTransaction transaction = connection.BeginTransaction();
+
+                    try
+                    {
+                        // Comanda SQL pentru a actualiza atributul returned în tabela Loans
+                        string updateLoanQuery = @"UPDATE Loans SET returned = 1 
                                         WHERE IdBook = @IdBook AND IdClient = @IdClient AND returned = 0";
-                    SqlCommand updateLoanCommand = new SqlCommand(updateLoanQuery, connection, transaction);
-                    updateLoanCommand.Parameters.AddWithValue("@IdBook", ownedBookId);
-                    updateLoanCommand.Parameters.AddWithValue("@IdClient", clientId);
+                        SqlCommand updateLoanCommand = new SqlCommand(updateLoanQuery, connection, transaction);
+                        updateLoanCommand.Parameters.AddWithValue("@IdBook", ownedBookId);
+                        updateLoanCommand.Parameters.AddWithValue("@IdClient", clientId);
 
-                    // Executarea actualizării împrumutului
-                    int rowsAffected = updateLoanCommand.ExecuteNonQuery();
+                        // Executarea actualizării împrumutului
+                        int rowsAffected = updateLoanCommand.ExecuteNonQuery();
 
-                    //if (rowsAffected == 1)
-                    //{
+                        //if (rowsAffected == 1)
+                        //{
                         // Comanda SQL pentru a crește cantitatea cărților disponibile în tabela Books
                         string updateBookQuantityQuery = @"UPDATE Books SET Quantity = Quantity + 1 WHERE Id = @IdBook";
                         SqlCommand updateBookQuantityCommand = new SqlCommand(updateBookQuantityQuery, connection, transaction);
@@ -367,20 +370,25 @@ namespace LibroTechFiestaV2
                         // Confirmarea tranzacției dacă ambele actualizări sunt reușite
                         transaction.Commit();
                         MessageBox.Show("Împrumut returnat cu succes!");
-                    //}
-                    //else
-                    //{
+                        //}
+                        //else
+                        //{
                         // Rularea înapoi a tranzacției dacă nu s-a putut găsi un împrumut ne-returnat cu acele ID-uri
                         //transaction.Rollback();
                         //MessageBox.Show("Nu s-a putut găsi un împrumut activ cu aceste ID-uri!");
-                    //}
+                        //}
+                    }
+                    catch (Exception ex)
+                    {
+                        // Rularea înapoi a tranzacției în caz de eroare
+                        transaction.Rollback();
+                        MessageBox.Show("Eroare: " + ex.Message);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    // Rularea înapoi a tranzacției în caz de eroare
-                    transaction.Rollback();
-                    MessageBox.Show("Eroare: " + ex.Message);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Selectați o carte!");
             }
             showLoanedBooks();
             showAllBooks();
@@ -394,9 +402,10 @@ namespace LibroTechFiestaV2
         private void buttonBack_Click(object sender, EventArgs e)
         {
                 this.Hide();
-                this.Close();
+                
                 MainPage mainPage = new MainPage();
                 mainPage.Show();
+                this.Close();
         }/*
         private void showDetailsButton_Click(object sender, EventArgs e)
         {
