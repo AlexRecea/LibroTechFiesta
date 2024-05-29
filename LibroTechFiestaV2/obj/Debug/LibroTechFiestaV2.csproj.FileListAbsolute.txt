@@ -24,9 +24,9 @@ C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\Li
 C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.pdb
 C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.LibrariansPage.resources
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.LibrariansPage.resources
-E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.AddNewBook.resources
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.ClientsPage.resources
 E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.CreateAccount.resources
 C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.AddNewBook.resources
 C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.ClientsPage.resources
 C:\Users\Elena\Desktop\Proiect II\LibroTechFiesta\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.CreateAccount.resources
+E:\Project_II\LibroTechFiestaV2\obj\Debug\LibroTechFiestaV2.AddNewBook.resources

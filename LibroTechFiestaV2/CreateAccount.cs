@@ -68,7 +68,7 @@ namespace LibroTechFiestaV2
                         {
                             if (phoneNumber != "Phone number" && IsValidPhoneNumber(phoneNumber)==true && !string.IsNullOrEmpty(phoneNumber))
                             {
-                                if (password != "Password" && password.Length > 5 && !string.IsNullOrEmpty(password))
+                                if (IsValidPassword(password))
                                 {
                                     string insertQuery = "INSERT INTO Clients (Id, FirstName, LastName, Email, PhoneNumber, Password) VALUES (@Id, @FirstName, @LastName, @Email, @PhoneNumber, @Password)";
 
@@ -92,10 +92,6 @@ namespace LibroTechFiestaV2
                                         }
                                         connection.Close();
                                     }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Setează o parolă puternică!");
                                 }
                             }
                             else
@@ -267,10 +263,10 @@ namespace LibroTechFiestaV2
                 return false;
             }
 
-            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
-            if (firstName.Length < 1 || firstName.Length > 39)
+            // Verifică lungimea titlului (de exemplu, între 1 și 19 de caractere)
+            if (firstName.Length < 1 || firstName.Length > 19)
             {
-                MessageBox.Show("Prenume trebuie să fie între 1 și 40 de caractere.");
+                MessageBox.Show("Prenume trebuie să fie între 1 și 19 de caractere.");
                 return false;
             }
 
@@ -292,10 +288,10 @@ namespace LibroTechFiestaV2
                 return false;
             }
 
-            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
-            if (lastName.Length < 1 || lastName.Length > 39)
+            // Verifică lungimea titlului (de exemplu, între 1 și 19 de caractere)
+            if (lastName.Length < 1 || lastName.Length > 19)
             {
-                MessageBox.Show("Nume trebuie să fie între 1 și 40 de caractere.");
+                MessageBox.Show("Nume trebuie să fie între 1 și 19 de caractere.");
                 return false;
             }
 
@@ -303,6 +299,25 @@ namespace LibroTechFiestaV2
             if (!Regex.IsMatch(lastName, @"^[a-zA-Z]+$"))
             {
                 MessageBox.Show("Numele conține caractere nepermise.");
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool IsValidPassword(string password)
+        {
+            // Verifică dacă titlul este null sau gol
+            if (string.IsNullOrWhiteSpace(password) && password == "Password")
+            {
+                MessageBox.Show("Parola nu poate fi gol.");
+                return false;
+            }
+
+            // Verifică lungimea titlului (de exemplu, între 1 și 39 de caractere)
+            if (password.Length < 1 || password.Length > 39)
+            {
+                MessageBox.Show("Parola trebuie să fie între 1 și 39 de caractere.");
                 return false;
             }
 

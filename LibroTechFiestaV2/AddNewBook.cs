@@ -58,7 +58,7 @@ namespace LibroTechFiestaV2
             int id = nrOfRows + 1;
             int quantityNumber;
             bool isSuccesful = int.TryParse(quantity, out quantityNumber);
-            if (isSuccesful)
+            if (isSuccesful) // verifici daca utilizatorul a introdus un numar in textbox, nu caractere
             {
                 InsertOrUpdateBook(title, author, quantityNumber, id, details);
             }
@@ -148,7 +148,7 @@ namespace LibroTechFiestaV2
                                         insertCommand.ExecuteNonQuery();
                                         MessageBox.Show("Carte adăugată cu succes!");
                                     }
-                                    if (details != "Details")
+                                    if (IsValidDetails(details))
                                     {
                                         using (var insertCommand2 = new SqlCommand(insertQueryDetails, connection, transaction))
                                         {
@@ -301,10 +301,10 @@ namespace LibroTechFiestaV2
                 return false;
             }
 
-            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
+            // Verifică lungimea titlului (de exemplu, între 1 și 49 de caractere)
             if (title.Length < 1 || title.Length > 49)
             {
-                MessageBox.Show("Titlul trebuie să fie între 1 și 100 de caractere.");
+                MessageBox.Show("Titlul trebuie să fie între 1 și 49 de caractere.");
                 return false;
             }
 
@@ -326,10 +326,10 @@ namespace LibroTechFiestaV2
                 return false;
             }
 
-            // Verifică lungimea titlului (de exemplu, între 1 și 100 de caractere)
+            // Verifică lungimea titlului (de exemplu, între 1 și 39 de caractere)
             if (author.Length < 1 || author.Length > 39)
             {
-                MessageBox.Show("Autorul trebuie să fie între 1 și 40 de caractere.");
+                MessageBox.Show("Autorul trebuie să fie între 1 și 39 de caractere.");
                 return false;
             }
 
@@ -337,6 +337,24 @@ namespace LibroTechFiestaV2
             if (!Regex.IsMatch(author, @"^[a-zA-Z\s]+$"))
             {
                 MessageBox.Show("Autorul conține caractere nepermise.");
+                return false;
+            }
+
+            return true;
+        }
+        public bool IsValidDetails(string details)
+        {
+            // Verifică dacă titlul este null sau gol
+            if (string.IsNullOrWhiteSpace(details) && details == "Details")
+            {
+                MessageBox.Show("Nu ai adăugat detalii despre carte.");
+                return false;
+            }
+
+            // Verifică lungimea titlului (de exemplu, între 1 și 999 de caractere)
+            if (details.Length < 1 || details.Length > 999)
+            {
+                MessageBox.Show("Detaliile trebuie să fie între 1 și 999 de caractere.");
                 return false;
             }
 
