@@ -112,6 +112,8 @@ namespace LibroTechFiestaV2
             {
                 passwordText.Text = ""; 
                 passwordText.ForeColor = Color.Black;
+                passwordText.UseSystemPasswordChar = true;
+
             }
         }
 
@@ -121,6 +123,8 @@ namespace LibroTechFiestaV2
             {
                 passwordText.Text = "password";
                 passwordText.ForeColor = Color.Silver;
+                passwordText.UseSystemPasswordChar = false;
+
             }
         }
 
@@ -294,7 +298,6 @@ namespace LibroTechFiestaV2
             if (usernameClientText.Text == "")
             {
                 usernameClientText.Text = "email";
-
                 usernameClientText.ForeColor = Color.Silver;
             }
         }
@@ -304,8 +307,9 @@ namespace LibroTechFiestaV2
             if (passwordClientText.Text == "password")
             {
                 passwordClientText.Text = "";
-
                 passwordClientText.ForeColor = Color.Black;
+                passwordClientText.UseSystemPasswordChar = true;
+
             }
         }
 
@@ -314,8 +318,9 @@ namespace LibroTechFiestaV2
             if(passwordClientText.Text == "")
             {
                 passwordClientText.Text= "password";
-
                 passwordClientText.ForeColor= Color.Silver;
+                passwordClientText.UseSystemPasswordChar = false;
+
             }
         }
     }
